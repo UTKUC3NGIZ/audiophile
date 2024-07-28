@@ -3,14 +3,16 @@ import Image from "next/image";
 import React from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import Button3 from "@/components/buttons/button3";
+import Button1 from "@/components/buttons/button1";
 import { useState } from "react";
 
 function header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(false);
+  const [basketIsOpen, basketSetIsOpen] = useState(true);
 
   return (
     <div className="flex justify-between py-8 px-6 bg-deepBlack">
-      <button onClick={() => setIsOpen(true)}>
+      <button onClick={() => hamburgerSetIsOpen(true)}>
         <Image
           src="/assets/shared/tablet/icon-hamburger.svg"
           alt="Arrow Right Icon"
@@ -26,7 +28,7 @@ function header() {
           height={25}
         />
       </div>
-      <button>
+      <button onClick={() => basketSetIsOpen(true)}>
         <Image
           src="/assets/shared/desktop/icon-cart.svg"
           alt="Arrow Right Icon"
@@ -34,12 +36,12 @@ function header() {
           height={20}
         />
       </button>
-      {/* Modal Dialog */}
+      {/* Hamburger Menu */}
       <Dialog
-        open={isOpen}
+        open={hamburgerIsOpen}
         as="div"
         className="relative z-10 focus:outline-none"
-        onClose={() => setIsOpen(false)}
+        onClose={() => hamburgerSetIsOpen(false)}
       >
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto mt-28">
           <div className="flex min-h-full items-center justify-center p-4">
@@ -89,6 +91,284 @@ function header() {
                     <span className="text-deepBlack text-sm">EARPHONES</span>
                     <Button3 />
                   </div>
+                </div>
+              </div>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      {/* Basket */}
+
+      <Dialog
+        open={basketIsOpen}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => basketSetIsOpen(false)}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto mt-28">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full max-w-md rounded-xl p-6  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              {/* Basket Header */}
+              <div>
+                <div className="flex justify-between">
+                  <h2 className="text-deepBlack text-lg font-bold uppercase">
+                    Cart (3)
+                  </h2>
+                  <button className="text-deepBlack text-opacity-50 underline">
+                    Remove All
+                  </button>
+                </div>
+                {/* basket product */}
+                <div>
+                  <div>
+                    <div className="flex justify-between mt-6">
+                      <div className="flex gap-4">
+                        <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                          <Image
+                            src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                            alt=""
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-deepBlack text-base font-bold">
+                            XX99 MK II
+                          </h2>
+                          <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                            $ 2,999
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="relative flex items-center max-w-[6rem]">
+                          <button
+                            type="button"
+                            id="decrement-button"
+                            data-input-counter-decrement="quantity-input"
+                            class="p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 2"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M1 1h16"
+                              />
+                            </svg>
+                          </button>
+                          <input
+                            type="text"
+                            id="quantity-input"
+                            data-input-counter
+                            aria-describedby="helper-text-explanation"
+                            class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                            placeholder="1"
+                            required
+                          />
+                          <button
+                            type="button"
+                            id="increment-button"
+                            data-input-counter-increment="quantity-input"
+                            class=" p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 18"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 1v16M1 9h16"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between mt-6">
+                      <div className="flex gap-4">
+                        <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                          <Image
+                            src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                            alt=""
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-deepBlack text-base font-bold">
+                            XX99 MK II
+                          </h2>
+                          <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                            $ 2,999
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="relative flex items-center max-w-[6rem]">
+                          <button
+                            type="button"
+                            id="decrement-button"
+                            data-input-counter-decrement="quantity-input"
+                            class="p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 2"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M1 1h16"
+                              />
+                            </svg>
+                          </button>
+                          <input
+                            type="text"
+                            id="quantity-input"
+                            data-input-counter
+                            aria-describedby="helper-text-explanation"
+                            class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                            placeholder="1"
+                            required
+                          />
+                          <button
+                            type="button"
+                            id="increment-button"
+                            data-input-counter-increment="quantity-input"
+                            class=" p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 18"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 1v16M1 9h16"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between mt-6">
+                      <div className="flex gap-4">
+                        <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                          <Image
+                            src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                            alt=""
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-deepBlack text-base font-bold">
+                            XX99 MK II
+                          </h2>
+                          <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                            $ 2,999
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="relative flex items-center max-w-[6rem]">
+                          <button
+                            type="button"
+                            id="decrement-button"
+                            data-input-counter-decrement="quantity-input"
+                            class="p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 2"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M1 1h16"
+                              />
+                            </svg>
+                          </button>
+                          <input
+                            type="text"
+                            id="quantity-input"
+                            data-input-counter
+                            aria-describedby="helper-text-explanation"
+                            class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                            placeholder="1"
+                            required
+                          />
+                          <button
+                            type="button"
+                            id="increment-button"
+                            data-input-counter-increment="quantity-input"
+                            class=" p-3 h-11 bg-cloudGray"
+                          >
+                            <svg
+                              class="w-3 h-3 text-deepBlack opacity-25"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 18 18"
+                            >
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 1v16M1 9h16"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Bashet Footer */}
+                <div className="flex justify-between pt-8">
+                  <h2 className="text-deepBlack text-opacity-50 text-base font-bold uppercase">
+                    Total
+                  </h2>
+                  <button className="text-deepBlack text-lg font-bold">
+                    $ 5,396
+                  </button>
+                </div>
+                <div className="mt-6">
+                  <Button1 />
                 </div>
               </div>
             </DialogPanel>
