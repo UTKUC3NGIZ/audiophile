@@ -114,8 +114,8 @@ function header() {
       >
         <DialogBackdrop className="fixed inset-0 bg-black/30" />
 
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4 mt-28 ">
-          <DialogPanel className="max-w-lg space-y-4 bg-white p-8 rounded-lg">
+        <div className="fixed inset-0 flex w-screen items-center justify-center mt-28 ">
+          <DialogPanel className="w-auto space-y-4 bg-white p-8 rounded-lg">
             <div>
               <div className="flex justify-between">
                 <h2 className="text-deepBlack text-lg font-bold uppercase">
@@ -128,7 +128,7 @@ function header() {
               {/* basket product */}
               <div>
                 <div>
-                  <div className="flex justify-between mt-6">
+                  <div className="flex justify-between mt-6 gap-4">
                     <div className="flex gap-4">
                       <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
                         <Image
@@ -136,6 +136,7 @@ function header() {
                           alt=""
                           width={100}
                           height={100}
+                          className="mt-4"
                         />
                       </div>
                       <div>
@@ -148,7 +149,7 @@ function header() {
                       </div>
                     </div>
                     <div>
-                      <div class="relative flex items-center max-w-[6rem]">
+                      <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                         <button
                           type="button"
                           id="decrement-button"
@@ -156,7 +157,7 @@ function header() {
                           class="p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -187,7 +188,7 @@ function header() {
                           class=" p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -205,27 +206,28 @@ function header() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-6">
+                  <div className="flex justify-between mt-6 gap-4">
                     <div className="flex gap-4">
                       <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
                         <Image
-                          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                          src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
                           alt=""
                           width={100}
                           height={100}
+                          className="mt-4"
                         />
                       </div>
                       <div>
                         <h2 className="text-deepBlack text-base font-bold">
-                          XX99 MK II
+                          XX59
                         </h2>
                         <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                          $ 2,999
+                          $ 899
                         </p>
                       </div>
                     </div>
                     <div>
-                      <div class="relative flex items-center max-w-[6rem]">
+                      <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                         <button
                           type="button"
                           id="decrement-button"
@@ -233,7 +235,7 @@ function header() {
                           class="p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -254,7 +256,7 @@ function header() {
                           data-input-counter
                           aria-describedby="helper-text-explanation"
                           class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
-                          placeholder="1"
+                          placeholder="2"
                           required
                         />
                         <button
@@ -264,7 +266,7 @@ function header() {
                           class=" p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -282,27 +284,28 @@ function header() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-6">
+                  <div className="flex justify-between mt-6 gap-4">
                     <div className="flex gap-4">
                       <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
                         <Image
-                          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                          src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
                           alt=""
                           width={100}
                           height={100}
+                          className="mt-4"
                         />
                       </div>
                       <div>
                         <h2 className="text-deepBlack text-base font-bold">
-                          XX99 MK II
+                          YX1
                         </h2>
                         <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                          $ 2,999
+                          $ 599
                         </p>
                       </div>
                     </div>
                     <div>
-                      <div class="relative flex items-center max-w-[6rem]">
+                      <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                         <button
                           type="button"
                           id="decrement-button"
@@ -310,7 +313,7 @@ function header() {
                           class="p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -341,7 +344,7 @@ function header() {
                           class=" p-3 h-11 bg-cloudGray"
                         >
                           <svg
-                            class="w-3 h-3 text-deepBlack opacity-25"
+                            class="w-2 h-2 text-deepBlack opacity-25"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
