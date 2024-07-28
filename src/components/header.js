@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function header() {
   const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(false);
-  const [basketIsOpen, basketSetIsOpen] = useState(true);
+  const [basketIsOpen, basketSetIsOpen] = useState(false);
 
   return (
     <div className="flex justify-between py-8 px-6 bg-deepBlack">
