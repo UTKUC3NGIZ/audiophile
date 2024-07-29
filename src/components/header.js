@@ -13,31 +13,64 @@ import Button1 from "@/components/buttons/button1";
 import { useState } from "react";
 
 function header() {
-  const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(true);
+  const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(false);
   const [basketIsOpen, basketSetIsOpen] = useState(false);
 
+  const navigation = [
+    { name: "Product", href: "#" },
+    { name: "Features", href: "#" },
+    { name: "Marketplace", href: "#" },
+    { name: "Company", href: "#" },
+  ];
+
   return (
-    <div className="flex justify-between py-8 px-6 bg-deepBlack">
-      <button onClick={() => hamburgerSetIsOpen(true)}>
+    <div className="flex justify-between items-center py-8 px-6 lg:px-20 bg-deepBlack">
+      <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
+        <button onClick={() => hamburgerSetIsOpen(true)} className="lg:hidden">
+          <Image
+            src="/assets/shared/tablet/icon-hamburger.svg"
+            alt="Hamburger Icon"
+            width={16}
+            height={16}
+          />
+        </button>
+
         <Image
-          src="/assets/shared/tablet/icon-hamburger.svg"
-          alt="Arrow Right Icon"
-          width={16}
-          height={16}
+          src="/assets/shared/desktop/logo.svg"
+          alt="Logo"
+          width={143}
+          height={25}
+          className="hidden md:block"
         />
-      </button>
+      </div>
       <div>
         <Image
           src="/assets/shared/desktop/logo.svg"
-          alt="Arrow Right Icon"
+          alt="Logo"
           width={143}
           height={25}
+          className="md:hidden"
         />
+        <div className="hidden lg:flex lg:gap-x-12">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-semibold leading-6 text-pureWhite"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
       </div>
-      <button onClick={() => basketSetIsOpen(true)}>
+
+      <button
+        onClick={() => basketSetIsOpen(true)}
+        className="md:ml-auto lg:ml-0"
+      >
         <Image
           src="/assets/shared/desktop/icon-cart.svg"
-          alt="Arrow Right Icon"
+          alt="Cart Icon"
           width={23}
           height={20}
         />
