@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function header() {
   const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(false);
-  const [basketIsOpen, basketSetIsOpen] = useState(false);
+  const [basketIsOpen, basketSetIsOpen] = useState(true);
 
   const navigation = [
     { name: "Product", href: "#" },
@@ -147,7 +147,7 @@ function header() {
       >
         <DialogBackdrop className="fixed inset-0 bg-black/30" />
 
-        <div className="fixed inset-0 flex w-screen items-center justify-center mt-28 ">
+        <div className="fixed inset-0 flex w-screen md:right-0 md:w-auto md:inset-auto md:top-0 md:px-6 lg:px-20 items-center justify-center mt-28 ">
           <DialogPanel className="w-auto space-y-4 bg-white p-8 rounded-lg">
             <div>
               <div className="flex justify-between">
