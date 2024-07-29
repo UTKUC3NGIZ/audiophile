@@ -14,13 +14,13 @@ import { useState } from "react";
 
 function header() {
   const [hamburgerIsOpen, hamburgerSetIsOpen] = useState(false);
-  const [basketIsOpen, basketSetIsOpen] = useState(true);
+  const [basketIsOpen, basketSetIsOpen] = useState(false);
 
   const navigation = [
-    { name: "Product", href: "#" },
-    { name: "Features", href: "#" },
-    { name: "Marketplace", href: "#" },
-    { name: "Company", href: "#" },
+    { name: "Home", href: "#" },
+    { name: "HEADPHONES", href: "#" },
+    { name: "SPEAKERS", href: "#" },
+    { name: "EARPHONES", href: "#" },
   ];
 
   return (
@@ -51,12 +51,12 @@ function header() {
           height={25}
           className="md:hidden"
         />
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-pureWhite"
+              className="text-sm font-bold text-pureWhite uppercase"
             >
               {item.name}
             </a>
