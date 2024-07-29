@@ -273,7 +273,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
               </button>
             </div>
             <div className="mt-6">
-              <Button1 />
+              <Button1 content={"Checkout"} />
             </div>
           </div>
         </DialogPanel>
