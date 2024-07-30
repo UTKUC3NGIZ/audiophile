@@ -8,12 +8,12 @@ function hamburgerMenu({ hamburgerIsOpen, setHamburgerIsOpen }) {
     <Dialog
       open={hamburgerIsOpen}
       as="div"
-      className="relative z-10 focus:outline-none"
+      className="relative focus:outline-none"
       onClose={() => setHamburgerIsOpen(false)}
     >
       <DialogBackdrop className="fixed inset-0 md:bg-black/30" />
 
-      <div className="fixed flex w-screen items-center justify-center p-4 pt-28 bg-pureWhite md:rounded-b-lg">
+      <div className="fixed flex w-screen items-center justify-center p-4 pt-28 bg-pureWhite md:rounded-b-lg top-[89px]">
         <DialogPanel
           transition
           className="w-full max-w-md md:max-w-max rounded-xl  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"

@@ -133,13 +133,36 @@ export default function Home() {
           <h2 className="text-3xl text-deepBlack font-bold mb-8">
             ZX7 SPEAKER
           </h2>
-          <div className="w-[90%]">
+          <div className="w-fit">
             <Button1
               content={"See Product"}
               bgColor={"transparent"}
               textColor={"deepBlack"}
               borderColor={"deepBlack"}
             />
+          </div>
+        </div>
+      </div>
+      {/* See Product 3 */}
+      <div className="overflow-hidden mt-6">
+        <img
+          src="/assets/home/mobile/image-earphones-yx1.jpg"
+          alt=""
+          className="w-full h-auto rounded-lg"
+        />
+        <div className="flex flex-col mt-6 border rounded-lg w-full bg-cloudGray ">
+          <div className="my-10 ml-6">
+            <h2 className="text-3xl text-deepBlack font-bold mb-8">
+              ZX7 SPEAKER
+            </h2>
+            <div className="w-fit">
+              <Button1
+                content={"See Product"}
+                bgColor={"transparent"}
+                textColor={"deepBlack"}
+                borderColor={"deepBlack"}
+              />
+            </div>
           </div>
         </div>
       </div>
