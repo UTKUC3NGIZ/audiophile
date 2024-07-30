@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main class="relative w-full h-screen px-6">
+      {/* Header */}
       <header>
         {/* background */}
         <img
@@ -40,6 +41,7 @@ export default function Home() {
           </div>
         </div>
       </header>
+      {/* Menu */}
       <div className="flex gap-12 md:gap-3 flex-col md:flex-row pt-64">
         <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
           <div className="absolute -top-10 ">
@@ -84,6 +86,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* See Product */}
       <div className="bg-sunsetOrange rounded-lg mt-[120px] ">
         <div className="relative flex justify-center ">
           <img
@@ -107,7 +110,36 @@ export default function Home() {
             truly remarkable sound.
           </h3>
           <div>
-            <Button1 content={"See Product"} bgColor={"midnightBlack"} />
+            <Button1
+              content={"See Product"}
+              bgColor={"midnightBlack"}
+              textColor={"pureWhite"}
+              borderColor={"transparent"}
+            />
+          </div>
+        </div>
+      </div>
+      {/* See Product 2 */}
+      <div className="rounded-lg mt-6 overflow-hidden relative">
+        <img
+          src="/assets/home/mobile/image-speaker-zx7.jpg"
+          alt=""
+          className="w-full h-auto"
+        />
+        <div
+          className="flex flex-col absolute top-1/2 ml-6 transform  -translate-y-1/2
+"
+        >
+          <h2 className="text-3xl text-deepBlack font-bold mb-8">
+            ZX7 SPEAKER
+          </h2>
+          <div className="w-[90%]">
+            <Button1
+              content={"See Product"}
+              bgColor={"transparent"}
+              textColor={"deepBlack"}
+              borderColor={"deepBlack"}
+            />
           </div>
         </div>
       </div>
