@@ -84,6 +84,33 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="bg-sunsetOrange rounded-lg mt-[120px] ">
+        <div className="relative flex justify-center ">
+          <img
+            src="/assets/home/desktop/pattern-circles.svg"
+            alt=""
+            className="absolute w-[558px] h-[558px] object-cover -top-[120px]"
+          />
+          <img
+            src="/assets/home/mobile/image-speaker-zx9.png"
+            alt=""
+            className=" w-[170px] h-auto mt-12"
+          />
+        </div>
+        <div className="flex flex-col items-center text-center pt-8 pb-14 gap-6">
+          <h2 className="text-4xl font-bold uppercase text-pureWhite">
+            ZX9 <br />
+            SPEAKER
+          </h2>
+          <h3 className="text-base text-pureWhite pt-">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </h3>
+          <div>
+            <Button1 content={"See Product"} bgColor={"midnightBlack"} />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
