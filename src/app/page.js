@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main class="relative w-full h-screen px-6">
+    <main class="relative w-full px-6 md:px-10 lg:px-40">
       {/* Header */}
       <header>
         {/* background */}
