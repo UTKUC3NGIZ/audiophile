@@ -17,7 +17,7 @@ function header() {
   ];
 
   return (
-    <div className="flex justify-between items-center py-8 px-6 bg-transparent md:px-10 lg:px-40 absolute top-0 w-full">
+    <div className="flex justify-between items-center py-8 px-6 bg-transparent md:px-10 lg:px-40 absolute top-0 w-full z-50">
       {/* Header Menu */}
       <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
         <button onClick={() => setHamburgerIsOpen(true)} className="lg:hidden">
