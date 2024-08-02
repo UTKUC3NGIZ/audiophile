@@ -12,7 +12,7 @@ export default function Home() {
         <img
           src="/assets/home/mobile/image-header.jpg"
           alt="Mobile Header"
-          class="absolute inset-0 w-full h-auto object-cover sm:hidden -z-10"
+          class="absolute inset-0 w-full h-auto object-cover md:hidden -z-10"
         />
         <img
           src="/assets/home/tablet/image-header.jpg"
