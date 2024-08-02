@@ -17,7 +17,7 @@ function header() {
   ];
 
   return (
-    <div className="flex justify-between items-center py-8 px-6 bg-deepBlack md:px-10 lg:px-40">
+    <div className="flex justify-between items-center py-8 px-6 bg-transparent md:px-10 lg:px-40 absolute top-0 w-full">
       {/* Header Menu */}
       <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
         <button onClick={() => setHamburgerIsOpen(true)} className="lg:hidden">
@@ -67,6 +67,7 @@ function header() {
           height={20}
         />
       </button>
+      <span className="w-[90%] h-[1px] bg-cloudGray opacity-50 absolute translate-y-1/2 translate-x-1/2 bottom-0 right-1/2"></span>
       {/* Hamburger Menu */}
       <HamburgerMenu
         hamburgerIsOpen={hamburgerIsOpen}
