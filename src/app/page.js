@@ -99,7 +99,7 @@ export default function Home() {
             <img
               src="/assets/home/desktop/pattern-circles.svg"
               alt=""
-              className="absolute w-[558px] h-[558px] md:w-[944px] md:h-[944px] object-cover -top-[120px] md:-top-[280px] lg:-top-[120px] lg:-left-36"
+              className="absolute w-[558px] h-[558px] md:w-[944px] md:h-[944px] object-cover -top-[120px] md:-top-[280px] lg:-top-[120px] xl:-left-36 lg:-left-64"
             />
             <img
               src="/assets/home/mobile/image-speaker-zx9.png"
@@ -109,12 +109,12 @@ export default function Home() {
             <img
               src="/assets/home/desktop/image-speaker-zx9.png"
               alt=""
-              className="w-[410px] h-auto mt-12 hidden lg:block absolute top-4 z-10 left-0 ml-32"
+              className="xl:w-[410px] w-[280px] h-auto mt-12 hidden lg:block absolute top-4 z-10 left-0 xl:ml-32 ml-12"
             />
           </div>
           <div className="lg:flex lg:justify-end lg:w-full">
             <div className="lg:w-1/2">
-              <div className="flex flex-col items-center text-center pt-8 md:pt-16 pb-14 gap-6 lg:justify-center lg:w-full lg:pt-[133px] lg:pb-32 lg:pl-32 lg:pr-24 ">
+              <div className="flex flex-col items-center text-center pt-8 md:pt-16 pb-14 gap-6 lg:justify-center lg:w-full xl:pt-[133px] xl:pb-32 xl:pl-32 xl:pr-24 ">
                 <h2 className="text-4xl md:text-6xl font-bold uppercase text-pureWhite lg:text-start lg:w-full">
                   ZX9 <br />
                   SPEAKER
