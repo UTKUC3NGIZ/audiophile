@@ -5,35 +5,36 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main class="relative w-full px-6 md:px-10 lg:px-40">
+    <main class="relative w-full">
       {/* Header */}
-      <header>
+      <div className="relative">
         {/* background */}
         <img
           src="/assets/home/mobile/image-header.jpg"
           alt="Mobile Header"
-          class="absolute inset-0 w-full h-auto object-cover md:hidden -z-10"
+          class=" w-full h-auto object-cover md:hidden -z-10"
         />
         <img
           src="/assets/home/tablet/image-header.jpg"
           alt="Tablet Header"
-          class="absolute inset-0 w-full h-auto object-cover hidden md:block lg:hidden -z-10"
+          class=" w-full h-auto object-cover hidden md:block lg:hidden -z-10"
         />
         <img
           src="/assets/home/desktop/image-hero.jpg"
           alt="Desktop Header"
-          class="absolute inset-0 w-full h-auto object-cover hidden lg:block -z-10"
+          class=" w-full h-auto object-cover hidden lg:block -z-10"
         />
         {/* Main Content */}
-        <div className="text-center flex justify-center items-center flex-col pt-28 md:pt-60 lg:pt-32">
+
+        <div className="text-center flex justify-center md:justify-start lg:justify-center items-center flex-col pt-28 md:pt-60 lg:pt-32  px-6 md:px-10 lg:px-40 absolute top-0 h-full w-full">
           <span className="text-pureWhite text-opacity-50 text-base lg:text-start w-full text-center pb-4 tracking-[.5em] font-light uppercase">
             NEW PRODUCT
           </span>
           <h1 className="text-pureWhite text-4xl md:text-6xl text-center lg:text-start pb-6 font-bold uppercase lg:w-full">
-            XX99 Mark II <br className="hidden lg:block" /> HeadphoneS
+            XX99 Mark II <br className="hidden md:block" /> HeadphoneS
           </h1>
           <div className="flex justify-center lg:justify-start lg:w-full">
-            <h3 className="text-pureWhite text-opacity-75 text-base text-center lg:text-start pb-7 font-medium md:w-3/5">
+            <h3 className="text-pureWhite text-opacity-75 text-base text-center lg:text-start pb-7 font-medium md:w-3/5 w-4/5">
               Experience natural, lifelike audio and exceptional{" "}
               <br className="hidden lg:block" /> build quality made for the
               passionate music enthusiast.
@@ -45,9 +46,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
       {/* Menu */}
-      <div className="flex gap-12 md:gap-3 flex-col md:flex-row pt-64 md:pt-72 lg:pt-96">
+      <div className="flex gap-12 md:gap-3 flex-col md:flex-row pt-20 md:pt-24 lg:pt-32  px-6 md:px-10 lg:px-40">
         <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
           <div className="absolute -top-10 ">
             <Image
@@ -92,38 +93,40 @@ export default function Home() {
         </div>
       </div>
       {/* See Product */}
-      <div className="bg-sunsetOrange rounded-lg mt-[120px] md:mt-24 lg:flex lg:flex-row relative overflow-hidden">
-        <div className=" flex justify-center ">
-          <img
-            src="/assets/home/desktop/pattern-circles.svg"
-            alt=""
-            className="absolute w-[558px] h-[558px] md:w-[944px] md:h-[944px] object-cover -top-[120px] md:-top-[280px] lg:-top-[120px] lg:-left-36"
-          />
-          <img
-            src="/assets/home/mobile/image-speaker-zx9.png"
-            alt=""
-            className=" w-[170px] md:w-[197px] h-auto mt-12 lg:hidden"
-          />
-          <img
-            src="/assets/home/desktop/image-speaker-zx9.png"
-            alt=""
-            className="w-[410px] h-auto mt-12 hidden lg:block absolute top-4 z-10 left-0 ml-32"
-          />
-        </div>
-        <div className="lg:flex lg:justify-end lg:w-full">
-          <div className="lg:w-1/2">
-            <div className="flex flex-col items-center text-center pt-8 md:pt-16 pb-14 gap-6 lg:justify-center lg:w-full lg:pt-[133px] lg:pb-32 lg:pl-32 lg:pr-24 ">
-              <h2 className="text-4xl md:text-6xl font-bold uppercase text-pureWhite lg:text-start lg:w-full">
-                ZX9 <br />
-                SPEAKER
-              </h2>
-              <h3 className="text-base text-pureWhite md:w-2/5 lg:text-start lg:w-full">
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound.
-              </h3>
-              <div className=" lg:mx-auto lg:text-start lg:w-full">
-                <div className="w-fit">
-                  <Button1 content={"See Product"} color={"black"} />
+      <div className=" px-6 md:px-10 lg:px-40">
+        <div className="bg-sunsetOrange rounded-lg mt-[120px] md:mt-24 lg:flex lg:flex-row relative overflow-hidden ">
+          <div className=" flex justify-center ">
+            <img
+              src="/assets/home/desktop/pattern-circles.svg"
+              alt=""
+              className="absolute w-[558px] h-[558px] md:w-[944px] md:h-[944px] object-cover -top-[120px] md:-top-[280px] lg:-top-[120px] lg:-left-36"
+            />
+            <img
+              src="/assets/home/mobile/image-speaker-zx9.png"
+              alt=""
+              className=" w-[170px] md:w-[197px] h-auto mt-12 lg:hidden"
+            />
+            <img
+              src="/assets/home/desktop/image-speaker-zx9.png"
+              alt=""
+              className="w-[410px] h-auto mt-12 hidden lg:block absolute top-4 z-10 left-0 ml-32"
+            />
+          </div>
+          <div className="lg:flex lg:justify-end lg:w-full">
+            <div className="lg:w-1/2">
+              <div className="flex flex-col items-center text-center pt-8 md:pt-16 pb-14 gap-6 lg:justify-center lg:w-full lg:pt-[133px] lg:pb-32 lg:pl-32 lg:pr-24 ">
+                <h2 className="text-4xl md:text-6xl font-bold uppercase text-pureWhite lg:text-start lg:w-full">
+                  ZX9 <br />
+                  SPEAKER
+                </h2>
+                <h3 className="text-base text-pureWhite md:w-2/5 lg:text-start lg:w-full">
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound.
+                </h3>
+                <div className=" lg:mx-auto lg:text-start lg:w-full">
+                  <div className="w-fit">
+                    <Button1 content={"See Product"} color={"black"} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -131,7 +134,7 @@ export default function Home() {
         </div>
       </div>
       {/* See Product 2 */}
-      <div className="rounded-lg mt-6 overflow-hidden relative">
+      <div className="rounded-lg mt-6 overflow-hidden relative  px-6 md:px-10 lg:px-40">
         <img
           src="/assets/home/mobile/image-speaker-zx7.jpg"
           alt=""
@@ -160,7 +163,7 @@ export default function Home() {
         </div>
       </div>
       {/* See Product 3 */}
-      <div className="overflow-hidden mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3 ">
+      <div className="overflow-hidden mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3  px-6 md:px-10 lg:px-40">
         <img
           src="/assets/home/mobile/image-earphones-yx1.jpg"
           alt=""
@@ -189,7 +192,7 @@ export default function Home() {
       </div>
       {/* Content */}
 
-      <div className="my-[120px] md:my-24 lg:flex lg:flex-row">
+      <div className="my-[120px] md:my-24 lg:flex lg:flex-row  px-6 md:px-10 lg:px-40">
         <img
           src="/assets/shared/mobile/image-best-gear.jpg"
           alt=""
