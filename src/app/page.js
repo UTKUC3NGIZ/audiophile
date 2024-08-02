@@ -41,7 +41,7 @@ export default function Home() {
           </div>
           <div className="lg:w-full">
             <div className="flex w-fit">
-              <Button1 content={"See Product"} />
+              <Button1 content={"See Product"} color={"orange"} />
             </div>
           </div>
         </div>
@@ -123,12 +123,7 @@ export default function Home() {
               </h3>
               <div className=" lg:mx-auto lg:text-start lg:w-full">
                 <div className="w-fit">
-                  <Button1
-                    content={"See Product"}
-                    bgColor={"midnightBlack"}
-                    textColor={"pureWhite"}
-                    borderColor={"transparent"}
-                  />
+                  <Button1 content={"See Product"} color={"black"} />
                 </div>
               </div>
             </div>
@@ -160,12 +155,7 @@ export default function Home() {
             ZX7 SPEAKER
           </h2>
           <div className="w-fit">
-            <Button1
-              content={"See Product"}
-              bgColor={"transparent"}
-              textColor={"deepBlack"}
-              borderColor={"deepBlack"}
-            />
+            <Button1 content={"See Product"} color={"transparent"} />
           </div>
         </div>
       </div>
@@ -192,12 +182,7 @@ export default function Home() {
               YX1 EARPHONES
             </h2>
             <div className="w-fit">
-              <Button1
-                content={"See Product"}
-                bgColor={"transparent"}
-                textColor={"deepBlack"}
-                borderColor={"deepBlack"}
-              />
+              <Button1 content={"See Product"} color={"transparent"} />
             </div>
           </div>
         </div>
