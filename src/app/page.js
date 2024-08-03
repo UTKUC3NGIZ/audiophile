@@ -163,7 +163,7 @@ export default function Home() {
         </div>
       </div>
       {/* See Product 3 */}
-      <div className="overflow-hidden mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3  px-6 md:px-10 lg:px-40">
+      <div className="overflow-hidden mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3  px-6 md:px-10 lg:px-40 lg:gap-6">
         <img
           src="/assets/home/mobile/image-earphones-yx1.jpg"
           alt=""
@@ -203,7 +203,7 @@ export default function Home() {
           alt=""
           className="w-full h-auto rounded-lg hidden md:block lg:hidden "
         />
-        <div className="flex flex-col lg:flex-row lg:grid lg:grid-cols-2 lg:gap-32">
+        <div className="flex flex-col lg:flex-row lg:grid lg:grid-cols-2 lg:gap-8">
           <img
             src="/assets/shared/desktop/image-best-gear.jpg"
             alt=""
