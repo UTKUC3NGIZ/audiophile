@@ -4,11 +4,19 @@ import React from "react";
 import { useState } from "react";
 import Basket from "@/components/basket";
 import HamburgerMenu from "@/components/hamburgerMenu";
+import { usePathname } from "next/navigation";
 
 function header() {
+  const colorVariants = {
+    black: "bg-midnightBlack ",
+    transparent: "bg-transparent ",
+  };
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
   const [basketIsOpen, setBasketIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
+  console.log(pathname);
   const navigation = [
     { name: "Home", href: "#" },
     { name: "HEADPHONES", href: "#" },
@@ -17,7 +25,11 @@ function header() {
   ];
 
   return (
-    <div className="flex justify-between items-center py-8 px-6 bg-transparent md:px-10 lg:px-40 absolute top-0 w-full z-50">
+    <div
+      className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full z-50 ${
+        isHomePage ? colorVariants.transparent : colorVariants.black
+      }`}
+    >
       {/* Header Menu */}
       <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
         <button onClick={() => setHamburgerIsOpen(true)} className="lg:hidden">
