@@ -28,9 +28,9 @@ export default function ClientComponent({ product }) {
   return (
     <div>
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
-        <h1 className="text-base text-deepBlack text-opacity-50 font-medium">
+        <button className="text-base text-deepBlack text-opacity-50 font-medium">
           Go Back
-        </h1>
+        </button>
       </div>
       <div className="flex flex-col gap-14 pb-20">
         <div className="px-6 md:px-10 lg:px-40 flex md:grid md:grid-cols-2 flex-col md:flex-row gap-8 md:gap-20 lg:gap-36 text-center">
