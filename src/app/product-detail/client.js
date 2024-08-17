@@ -1,9 +1,33 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button1 from "@/components/buttons/button1";
 
 export default function ClientComponent({ product }) {
   console.log(product);
+  const [deviceType, setDeviceType] = useState("mobile");
+
+  useEffect(() => {
+    console.log(product);
+
+    const updateDeviceType = () => {
+      const screen = window.matchMedia("(min-width: 768px)");
+      if (screen.matches) {
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+          setDeviceType("desktop");
+        } else {
+          setDeviceType("tablet");
+        }
+      } else {
+        setDeviceType("mobile");
+      }
+    };
+
+    updateDeviceType();
+
+    window.addEventListener("resize", updateDeviceType);
+
+    return () => window.removeEventListener("resize", updateDeviceType);
+  }, [product]);
   return (
     <div>
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
@@ -14,34 +38,24 @@ export default function ClientComponent({ product }) {
       <div className="flex flex-col gap-14 pb-20">
         <div className="px-6 md:px-10 lg:px-40 flex md:grid md:grid-cols-2 flex-col md:flex-row gap-8 md:gap-20 lg:gap-36 text-center">
           <img
-            src="/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
+            src={product.image[deviceType]}
             alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg md:hidden"
+            className=" w-auto h-auto object-cover rounded-lg "
           />
-          <img
-            src="/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg"
-            alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg hidden md:block lg:hidden"
-          />
-          <img
-            src="/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
-            alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg hidden lg:block hidden"
-          />
+
           <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start md:justify-center">
-            <span className="text-sunsetOrange text-sm font-light tracking-[.6em]">
-              NEW PRODUCT
+            <span className="text-sunsetOrange text-sm font-light tracking-[.6em] uppercase">
+              {product.new ? "New Product" : ""}
             </span>
             <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
-              XX99 Mark II <br /> Headphones
+              {product.name}
             </h1>
             <p className="text-deepBlack text-opacity-50 text-base text-start font-normal lg:text-start">
-              As the gold standard for headphones, the classic XX99 Mark I
-              offers detailed and accurate audio reproduction for audiophiles,
-              mixing engineers, and music aficionados alike in studios and on
-              the go.
+              {product.description}
             </p>
-            <span className="text-deepBlack text-lg font-bold ">$ 2,999</span>
+            <span className="text-deepBlack text-lg font-bold ">
+              ${product.price}
+            </span>
             <div className="w-fit flex flex-row gap-4">
               <div className="relative flex items-center   overflow-hidden">
                 <button
@@ -108,20 +122,7 @@ export default function ClientComponent({ product }) {
           FEATURES
         </h1>
         <p className="text-deepBlack text-opacity-50 text-base text-start font-normal lg:text-start">
-          Featuring a genuine leather head strap and premium earcups, these
-          headphones deliver superior comfort for those who like to enjoy
-          endless listening. It includes intuitive controls designed for any
-          situation. Whether you’re taking a business call or just in your own
-          personal space, the auto on/off and pause features ensure that you’ll
-          never miss a beat.
-          <br />
-          <br />
-          The advanced Active Noise Cancellation with built-in equalizer allow
-          you to experience your audio world on your terms. It lets you enjoy
-          your audio in peace, but quickly interact with your surroundings when
-          you need to. Combined with Bluetooth 5. 0 compliant connectivity and
-          17 hour battery life, the XX99 Mark II headphones gives you superior
-          sound, cutting-edge technology, and a modern design aesthetic.
+          {product.features}
         </p>
       </div>
       <div className="flex flex-col gap-6 items-start lg:justify-center md:flex-row md:justify-between lg:items-start px-6 md:px-10 lg:px-40 pt-20">
