@@ -2,6 +2,7 @@ import React from "react";
 import Content from "@/components/content";
 import Menu from "@/components/menu";
 import Button1 from "@/components/buttons/button1";
+import data from "@/data.json";
 function page() {
   return (
     <div className="pt-[88px] ">
@@ -11,14 +12,14 @@ function page() {
         </h1>
       </div>
       <div className="flex flex-col gap-14 pb-20">
-        <div className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center">
+        <div className="px-6 md:px-10 lg:px-40 flex md:grid md:grid-cols-2 flex-col md:flex-row gap-8 md:gap-20 lg:gap-36 text-center">
           <img
             src="/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
             alt="Mobile Header"
             className=" w-auto h-auto object-cover rounded-lg md:hidden"
           />
           <img
-            src="/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg"
+            src="/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg"
             alt="Mobile Header"
             className=" w-auto h-auto object-cover rounded-lg hidden md:block lg:hidden"
           />
@@ -27,7 +28,7 @@ function page() {
             alt="Mobile Header"
             className=" w-auto h-auto object-cover rounded-lg hidden lg:block hidden"
           />
-          <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start">
+          <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start md:justify-center">
             <span className="text-sunsetOrange text-sm font-light tracking-[.6em]">
               NEW PRODUCT
             </span>
@@ -123,11 +124,11 @@ function page() {
           sound, cutting-edge technology, and a modern design aesthetic.
         </p>
       </div>
-      <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start px-6 md:px-10 lg:px-40 pt-20">
+      <div className="flex flex-col gap-6 items-start lg:justify-center md:flex-row md:justify-between lg:items-start px-6 md:px-10 lg:px-40 pt-20">
         <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
           in the box
         </h1>
-        <ul className="gap-2 flex flex-col">
+        <ul className="gap-2 flex flex-col md:pr-36">
           <li className="flex gap-6 ">
             <span className="text-sunsetOrange text-base font-bold">1x</span>
             <span className="text-deepBlack text-opacity-50 text-base font-medium">
