@@ -156,57 +156,29 @@ export default function ClientComponent({ product }) {
         <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase text-center">
           you may also like
         </h1>
-        <div className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center">
-          <img
-            src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg"
-            alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg md:hidden"
-          />
 
-          <div className="flex flex-col gap-6 lg:justify-center lg:items-start items-center">
-            <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left text-center">
-              XX99 Mark II Headphones
-            </h1>
+        {product.others.map((item, index) => (
+          <div
+            className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center"
+            key={index}
+          >
+            <img
+              src={item.image[deviceType]}
+              alt="Mobile Header"
+              className=" w-auto h-auto object-cover rounded-lg md:hidden"
+            />
 
-            <div className="w-fit ">
-              <Button1 color={"orange"} content={"See Product"} />
+            <div className="flex flex-col gap-6 lg:justify-center lg:items-start items-center">
+              <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left text-center">
+                {item.name}
+              </h1>
+
+              <div className="w-fit ">
+                <Button1 color={"orange"} content={"See Product"} />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center">
-          <img
-            src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg"
-            alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg md:hidden"
-          />
-
-          <div className="flex flex-col gap-6 lg:justify-center lg:items-start items-center">
-            <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left text-center">
-              XX99 Mark II Headphones
-            </h1>
-
-            <div className="w-fit ">
-              <Button1 color={"orange"} content={"See Product"} />
-            </div>
-          </div>
-        </div>
-        <div className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center">
-          <img
-            src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg"
-            alt="Mobile Header"
-            className=" w-auto h-auto object-cover rounded-lg md:hidden"
-          />
-
-          <div className="flex flex-col gap-6 lg:justify-center lg:items-start items-center">
-            <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left text-center">
-              XX99 Mark II Headphones
-            </h1>
-
-            <div className="w-fit ">
-              <Button1 color={"orange"} content={"See Product"} />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
