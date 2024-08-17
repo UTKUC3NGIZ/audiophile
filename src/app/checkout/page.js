@@ -365,7 +365,7 @@ function page() {
       >
         <DialogBackdrop className="fixed inset-0 bg-black/30" />
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="max-w-lg space-y-4 border bg-white p-8 rounded-lg">
+          <DialogPanel className="max-w-[540px] md:w-screen space-y-4 border bg-white p-8 rounded-lg">
             <Image
               src="/assets/checkout/icon-order-confirmation.svg"
               alt=""
