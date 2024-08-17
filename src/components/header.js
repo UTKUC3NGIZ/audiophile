@@ -16,7 +16,6 @@ function header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
-  console.log(pathname);
   const navigation = [
     { name: "Home", href: "#" },
     { name: "HEADPHONES", href: "#" },

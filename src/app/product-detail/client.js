@@ -1,15 +1,11 @@
-import React from "react";
-import Content from "@/components/content";
-import Menu from "@/components/menu";
+"use client";
+import React, { useEffect } from "react";
 import Button1 from "@/components/buttons/button1";
-import { promises as fs } from "fs";
 
-export default async function Page() {
-  const file = await fs.readFile(process.cwd() + "/src/data.json", "utf8");
-  const data = JSON.parse(file);
-  console.log(data);
+export default function ClientComponent({ product }) {
+  console.log(product);
   return (
-    <div className="pt-[88px] ">
+    <div>
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
         <h1 className="text-base text-deepBlack text-opacity-50 font-medium">
           Go Back
@@ -238,8 +234,6 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <Menu />
-      <Content />
     </div>
   );
 }
