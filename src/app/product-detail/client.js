@@ -130,54 +130,27 @@ export default function ClientComponent({ product }) {
           in the box
         </h1>
         <ul className="gap-2 flex flex-col md:pr-36">
-          <li className="flex gap-6 ">
-            <span className="text-sunsetOrange text-base font-bold">1x</span>
-            <span className="text-deepBlack text-opacity-50 text-base font-medium">
-              Headphone Unit
-            </span>
-          </li>
-          <li className="flex gap-6 ">
-            <span className="text-sunsetOrange text-base font-bold">1x</span>
-            <span className="text-deepBlack text-opacity-50 text-base font-medium">
-              Headphone Unit
-            </span>
-          </li>
-          <li className="flex gap-6 ">
-            <span className="text-sunsetOrange text-base font-bold">1x</span>
-            <span className="text-deepBlack text-opacity-50 text-base font-medium">
-              Headphone Unit
-            </span>
-          </li>
-          <li className="flex gap-6 ">
-            <span className="text-sunsetOrange text-base font-bold">1x</span>
-            <span className="text-deepBlack text-opacity-50 text-base font-medium">
-              Headphone Unit
-            </span>
-          </li>
-          <li className="flex gap-6 ">
-            <span className="text-sunsetOrange text-base font-bold">1x</span>
-            <span className="text-deepBlack text-opacity-50 text-base font-medium">
-              Headphone Unit
-            </span>
-          </li>
+          {product.includes.map((item, index) => (
+            <li className="flex gap-6 " key={index}>
+              <span className="text-sunsetOrange text-base font-bold">
+                {item.quantity}x
+              </span>
+              <span className="text-deepBlack text-opacity-50 text-base font-medium">
+                {item.item}
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="px-6 md:px-10 lg:px-40 flex flex-col gap-5 pt-20">
-        <img
-          src="/assets/product-yx1-earphones/mobile/image-gallery-1.jpg"
-          alt="Mobile Header"
-          className=" w-auto h-auto object-cover rounded-lg md:hidden"
-        />
-        <img
-          src="/assets/product-yx1-earphones/mobile/image-gallery-2.jpg"
-          alt="Mobile Header"
-          className=" w-auto h-auto object-cover rounded-lg md:hidden"
-        />
-        <img
-          src="/assets/product-yx1-earphones/mobile/image-gallery-3.jpg"
-          alt="Mobile Header"
-          className=" w-auto h-auto object-cover rounded-lg md:hidden"
-        />
+        {Object.values(product.gallery).map((item, index) => (
+          <img
+            key={index}
+            src={item[deviceType]}
+            alt={`${deviceType} Header`}
+            className="w-auto h-auto object-cover rounded-lg"
+          />
+        ))}
       </div>
       <div className="flex flex-col gap-14 pb-20 mt-20">
         <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase text-center">
