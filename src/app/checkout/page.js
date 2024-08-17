@@ -171,12 +171,12 @@ function page() {
               value={selected}
               onChange={setSelected}
               aria-label="Server size"
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-4 md:justify-end md:items-end"
             >
               {plans.map((plan) => (
                 <Field
                   key={plan}
-                  className="flex flex-row gap-4 items-center w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm"
+                  className="flex flex-row gap-4 items-center w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm md:w-1/2"
                 >
                   <Radio
                     value={plan}
@@ -188,40 +188,42 @@ function page() {
                 </Field>
               ))}
             </RadioGroup>
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="moneyNumber"
-                className="block text-sm font-medium text-deepBlack"
-              >
-                e-Money Number
-              </label>
-              <div className="mt-2">
-                <input
-                  id="moneyNumber"
-                  name="moneyNumber"
-                  type="text"
-                  autoComplete="cc-number"
-                  placeholder="238521993"
-                  className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                />
+            <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+              <div className="sm:col-span-3 md:col-span-1">
+                <label
+                  htmlFor="moneyNumber"
+                  className="block text-sm font-medium text-deepBlack"
+                >
+                  e-Money Number
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="moneyNumber"
+                    name="moneyNumber"
+                    type="text"
+                    autoComplete="cc-number"
+                    placeholder="238521993"
+                    className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                  />
+                </div>
               </div>
-            </div>
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="moneyPin"
-                className="block text-sm font-medium text-deepBlack"
-              >
-                e-Money PIN
-              </label>
-              <div className="mt-2">
-                <input
-                  id="moneyPin"
-                  name="moneyPin"
-                  type="text"
-                  autoComplete="cc-csc"
-                  placeholder="6891"
-                  className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                />
+              <div className="sm:col-span-3 md:col-span-1">
+                <label
+                  htmlFor="moneyPin"
+                  className="block text-sm font-medium text-deepBlack"
+                >
+                  e-Money PIN
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="moneyPin"
+                    name="moneyPin"
+                    type="text"
+                    autoComplete="cc-csc"
+                    placeholder="6891"
+                    className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                  />
+                </div>
               </div>
             </div>
           </div>
