@@ -48,15 +48,15 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                     </div>
                   </div>
                   <div>
-                    <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
+                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                       <button
                         type="button"
                         id="decrement-button"
                         data-input-counter-decrement="quantity-input"
-                        class="p-3 h-11 bg-cloudGray"
+                        className="p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -76,7 +76,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         id="quantity-input"
                         data-input-counter
                         aria-describedby="helper-text-explanation"
-                        class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
                         placeholder="1"
                         required
                       />
@@ -84,10 +84,10 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         type="button"
                         id="increment-button"
                         data-input-counter-increment="quantity-input"
-                        class=" p-3 h-11 bg-cloudGray"
+                        className=" p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -126,15 +126,15 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                     </div>
                   </div>
                   <div>
-                    <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
+                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                       <button
                         type="button"
                         id="decrement-button"
                         data-input-counter-decrement="quantity-input"
-                        class="p-3 h-11 bg-cloudGray"
+                        className="p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -154,7 +154,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         id="quantity-input"
                         data-input-counter
                         aria-describedby="helper-text-explanation"
-                        class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
                         placeholder="2"
                         required
                       />
@@ -162,10 +162,10 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         type="button"
                         id="increment-button"
                         data-input-counter-increment="quantity-input"
-                        class=" p-3 h-11 bg-cloudGray"
+                        className=" p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -204,15 +204,15 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                     </div>
                   </div>
                   <div>
-                    <div class="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
+                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
                       <button
                         type="button"
                         id="decrement-button"
                         data-input-counter-decrement="quantity-input"
-                        class="p-3 h-11 bg-cloudGray"
+                        className="p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -232,7 +232,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         id="quantity-input"
                         data-input-counter
                         aria-describedby="helper-text-explanation"
-                        class=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
                         placeholder="1"
                         required
                       />
@@ -240,10 +240,10 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                         type="button"
                         id="increment-button"
                         data-input-counter-increment="quantity-input"
-                        class=" p-3 h-11 bg-cloudGray"
+                        className=" p-3 h-11 bg-cloudGray"
                       >
                         <svg
-                          class="w-2 h-2 text-deepBlack opacity-25"
+                          className="w-2 h-2 text-deepBlack opacity-25"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"

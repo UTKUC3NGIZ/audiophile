@@ -5,24 +5,24 @@ import Content from "@/components/content";
 
 export default function Home() {
   return (
-    <main class="relative w-full">
+    <main className="relative w-full">
       {/* Header */}
       <div className="relative">
         {/* background */}
         <img
           src="/assets/home/mobile/image-header.jpg"
           alt="Mobile Header"
-          class=" w-full h-auto object-cover md:hidden -z-10"
+          className=" w-full h-auto object-cover md:hidden -z-10"
         />
         <img
           src="/assets/home/tablet/image-header.jpg"
           alt="Tablet Header"
-          class=" w-full h-auto object-cover hidden md:block lg:hidden -z-10"
+          className=" w-full h-auto object-cover hidden md:block lg:hidden -z-10"
         />
         <img
           src="/assets/home/desktop/image-hero.jpg"
           alt="Desktop Header"
-          class=" w-full h-auto object-cover hidden lg:block -z-10"
+          className=" w-full h-auto object-cover hidden lg:block -z-10"
         />
         {/* Main Content */}
 
