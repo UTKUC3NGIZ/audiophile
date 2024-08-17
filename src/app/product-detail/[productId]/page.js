@@ -9,7 +9,7 @@ export default async function Page({ params }) {
   const product = data.find((item) => item.id === Number(params.productId));
 
   return (
-    <div className="pt-[88px] ">
+    <div className="pt-[88px] max-w-[1440px] m-auto">
       <ClientComponent product={product} />
       <Menu />
       <Content />

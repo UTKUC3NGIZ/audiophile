@@ -3,12 +3,9 @@ import React, { useEffect, useState } from "react";
 import Button1 from "@/components/buttons/button1";
 
 export default function ClientComponent({ product }) {
-  console.log(product);
   const [deviceType, setDeviceType] = useState("mobile");
 
   useEffect(() => {
-    console.log(product);
-
     const updateDeviceType = () => {
       const screen = window.matchMedia("(min-width: 768px)");
       if (screen.matches) {
@@ -47,7 +44,7 @@ export default function ClientComponent({ product }) {
             <span className="text-sunsetOrange text-sm font-light tracking-[.6em] uppercase">
               {product.new ? "New Product" : ""}
             </span>
-            <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
+            <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase md:text-left">
               {product.name}
             </h1>
             <p className="text-deepBlack text-opacity-50 text-base text-start font-normal lg:text-start">
@@ -117,68 +114,78 @@ export default function ClientComponent({ product }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start px-6 md:px-10 lg:px-40">
-        <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
-          FEATURES
-        </h1>
-        <p className="text-deepBlack text-opacity-50 text-base text-start font-normal lg:text-start">
-          {product.features}
-        </p>
+      <div className="grid grid-cols-2  px-6 md:px-10 lg:px-40">
+        <div className="flex flex-col gap-6 items-start lg:justify-center lg:items-start col-span-2 lg:col-span-1">
+          <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
+            FEATURES
+          </h1>
+          <p className="text-deepBlack text-opacity-50 text-base text-start font-normal lg:text-start">
+            {product.features}
+          </p>
+        </div>
+        <div className="flex flex-col gap-6 items-start md:flex-row lg:flex-col md:justify-between lg:items-center  lg:justify-start  pt-20 lg:pt-0 col-span-2 lg:col-span-1">
+          <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
+            in the box
+          </h1>
+          <ul className="gap-2 flex flex-col md:pr-36 lg:pr-0">
+            {product.includes.map((item, index) => (
+              <li className="flex gap-6 " key={index}>
+                <span className="text-sunsetOrange text-base font-bold">
+                  {item.quantity}x
+                </span>
+                <span className="text-deepBlack text-opacity-50 text-base font-medium">
+                  {item.item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="flex flex-col gap-6 items-start lg:justify-center md:flex-row md:justify-between lg:items-start px-6 md:px-10 lg:px-40 pt-20">
-        <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase">
-          in the box
-        </h1>
-        <ul className="gap-2 flex flex-col md:pr-36">
-          {product.includes.map((item, index) => (
-            <li className="flex gap-6 " key={index}>
-              <span className="text-sunsetOrange text-base font-bold">
-                {item.quantity}x
-              </span>
-              <span className="text-deepBlack text-opacity-50 text-base font-medium">
-                {item.item}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="px-6 md:px-10 lg:px-40 flex flex-col gap-5 pt-20">
-        {Object.values(product.gallery).map((item, index) => (
+      <div className="px-6 md:px-10 lg:px-40 flex flex-col gap-5 pt-20 md:grid grid-cols-12">
+        <div className="flex gap-5 flex-col col-span-5">
           <img
-            key={index}
-            src={item[deviceType]}
+            src={product.gallery.first[deviceType]}
             alt={`${deviceType} Header`}
-            className="w-auto h-auto object-cover rounded-lg"
+            className="rounded-lg"
           />
-        ))}
+          <img
+            src={product.gallery.second[deviceType]}
+            alt={`${deviceType} Header`}
+            className="rounded-lg"
+          />
+        </div>
+        <img
+          src={product.gallery.third[deviceType]}
+          alt={`${deviceType} Header`}
+          className=" rounded-lg col-span-7"
+        />
       </div>
-      <div className="flex flex-col gap-14 pb-20 mt-20">
+      <div className="flex flex-col gap-14 pb-20 mt-20 px-6 md:px-10 lg:px-40">
         <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left uppercase text-center">
           you may also like
         </h1>
 
-        {product.others.map((item, index) => (
-          <div
-            className="px-6 md:px-10 lg:px-40 flex lg:grid lg:grid-cols-2 flex-col gap-8 lg:gap-36 text-center"
-            key={index}
-          >
-            <img
-              src={item.image[deviceType]}
-              alt="Mobile Header"
-              className=" w-auto h-auto object-cover rounded-lg md:hidden"
-            />
+        <div className="flex flex-col md:flex-row  gap-14 md:gap-3 lg:gap-8">
+          {product.others.map((item, index) => (
+            <div className=" flex  flex-col gap-8  text-center" key={index}>
+              <img
+                src={item.image[deviceType]}
+                alt="Mobile Header"
+                className=" w-auto h-auto object-cover rounded-lg"
+              />
 
-            <div className="flex flex-col gap-6 lg:justify-center lg:items-start items-center">
-              <h1 className="md:text-4xl text-2xl text-deepBlack font-bold lg:text-left text-center">
-                {item.name}
-              </h1>
+              <div className="flex flex-col gap-6 lg:justify-center md:items-start items-center lg:items-center">
+                <h1 className="md:text-2xl text-2xl text-deepBlack font-bold lg:text-left text-center">
+                  {item.name}
+                </h1>
 
-              <div className="w-fit ">
-                <Button1 color={"orange"} content={"See Product"} />
+                <div className="w-fit ">
+                  <Button1 color={"orange"} content={"See Product"} />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
