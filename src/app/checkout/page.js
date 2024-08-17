@@ -1,5 +1,15 @@
 "use client";
-import { Field, Label, Radio, RadioGroup } from "@headlessui/react";
+import {
+  Description,
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+  Field,
+  Label,
+  Radio,
+  RadioGroup,
+} from "@headlessui/react";
 import { useState } from "react";
 import Button1 from "@/components/buttons/button1";
 import Image from "next/image";
@@ -8,6 +18,7 @@ const plans = ["e-money", "Cash on Delivery"];
 
 function page() {
   let [selected, setSelected] = useState(plans[0]);
+  let [success, setSuccess] = useState(true);
 
   return (
     <div className="pt-[88px] max-w-[1440px] m-auto px-6 md:px-10 lg:px-40 bg-cloudGray pb-24">
@@ -341,12 +352,76 @@ function page() {
                 $ 5,446
               </button>
             </div>
-            <div className="mt-6">
+            <div className="mt-6" onClick={() => setSuccess(true)}>
               <Button1 content={"CONTINUE & PAY"} color={"orange"} />
             </div>
           </div>
         </div>
       </div>
+      <Dialog
+        open={success}
+        onClose={() => setSuccess(false)}
+        className="relative z-50"
+      >
+        <DialogBackdrop className="fixed inset-0 bg-black/30" />
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <DialogPanel className="max-w-lg space-y-4 border bg-white p-8 rounded-lg">
+            <Image
+              src="/assets/checkout/icon-order-confirmation.svg"
+              alt=""
+              width={64}
+              height={64}
+              className=" pb-2"
+            />
+            <h1 className="text-2xl font-bold text-deepBlack">
+              THANK YOU FOR YOUR ORDER
+            </h1>
+            <p className="block text-base font-medium text-deepBlack text-opacity-50">
+              You will receive an email confirmation shortly.
+            </p>
+            <div className="bg-cloudGray p-6 rounded-lg rounded-b-none">
+              <div className="flex justify-between mt-6 gap-4 border-b ">
+                <div className="flex gap-4">
+                  <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                    <Image
+                      src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                      alt=""
+                      width={100}
+                      height={100}
+                      className="mt-4"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-2">
+                    <h2 className="text-deepBlack text-base font-bold">
+                      XX99 MK II
+                    </h2>
+                    <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                      $ 2,999
+                    </p>
+                  </div>
+                </div>
+                <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
+                  x1
+                </span>
+              </div>
+              <p className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3">
+                and 2 other item(s)
+              </p>
+            </div>
+            <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0">
+              <h2 className="text-base text-snowWhite opacity-50 font-medium">
+                GRAND TOTAL
+              </h2>
+              <span className="text-snowWhite text-lg font-bold">$ 5,446</span>
+            </div>
+            <div className="flex gap-4 ">
+              <div onClick={() => setSuccess(false)} className="w-full">
+                <Button1 content={"BACK TO HOME"} color={"orange"} />
+              </div>
+            </div>
+          </DialogPanel>
+        </div>
+      </Dialog>
     </div>
   );
 }
