@@ -2,8 +2,12 @@ import React from "react";
 import Content from "@/components/content";
 import Menu from "@/components/menu";
 import Button1 from "@/components/buttons/button1";
-import data from "@/data.json";
-function page() {
+import { promises as fs } from "fs";
+
+export default async function Page() {
+  const file = await fs.readFile(process.cwd() + "/src/data.json", "utf8");
+  const data = JSON.parse(file);
+  console.log(data);
   return (
     <div className="pt-[88px] ">
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
@@ -59,9 +63,9 @@ function page() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 1h16"
                     />
                   </svg>
@@ -90,9 +94,9 @@ function page() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M9 1v16M1 9h16"
                     />
                   </svg>
@@ -239,5 +243,3 @@ function page() {
     </div>
   );
 }
-
-export default page;
