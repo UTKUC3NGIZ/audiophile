@@ -262,78 +262,32 @@ function page() {
               {/* basket product */}
 
               <div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
+                {basket.map((item, index) => (
+                  <div className="flex justify-between mt-6 gap-4" key={index}>
+                    <div className="flex gap-4">
+                      <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                        <Image
+                          src={`/assets/cart/image-${item.slug}.jpg`}
+                          alt=""
+                          width={100}
+                          height={100}
+                          className="mt-4"
+                        />
+                      </div>
+                      <div className="flex flex-col mt-2">
+                        <h2 className="text-deepBlack text-base font-bold">
+                          {item.name}
+                        </h2>
+                        <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                          $ {item.price.toLocaleString()}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col mt-2">
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX99 MK II
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 2,999
-                      </p>
-                    </div>
+                    <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
+                      x{item.quantity}
+                    </span>
                   </div>
-                  <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
-                    x1
-                  </span>
-                </div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
-                    </div>
-                    <div className="flex flex-col mt-2">
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX99 MK II
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 2,999
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
-                    x1
-                  </span>
-                </div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
-                    </div>
-                    <div className="flex flex-col mt-2">
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX99 MK II
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 2,999
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
-                    x1
-                  </span>
-                </div>
+                ))}
               </div>
 
               {/* Bashet Footer */}
