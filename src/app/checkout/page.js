@@ -12,7 +12,7 @@ import {
 import Button1 from "@/components/buttons/button1";
 import Image from "next/image";
 
-const plans = ["e-money", "Cash on Delivery"];
+const plans = ["e-money", "Cash on Delivery "];
 
 function Page() {
   let [selected, setSelected] = useState(plans[0]);
