@@ -9,7 +9,6 @@ import {
   RadioGroup,
 } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import Button1 from "@/components/buttons/button1";
 import Image from "next/image";
 
@@ -17,7 +16,7 @@ const plans = ["e-money", "Cash on Delivery"];
 
 function page() {
   let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(true);
+  let [success, setSuccess] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   const [basket, setBasket] = useState([]);
@@ -399,7 +398,7 @@ function page() {
                         <div className="flex gap-4">
                           <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
                             <Image
-                              src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                              src={`/assets/cart/image-${item.slug}.jpg`}
                               alt=""
                               width={100}
                               height={100}
