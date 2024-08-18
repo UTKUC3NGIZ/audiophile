@@ -29,7 +29,7 @@ function Page({ product }) {
     <div>
       <div className="bg-midnightBlack flex justify-center py-8 ">
         <h1 className="uppercase text-3xl text-pureWhite font-bold">
-          {product[0].category}
+          {product[0]?.category}
         </h1>
       </div>
       <div className="flex flex-col gap-14 pb-20">
