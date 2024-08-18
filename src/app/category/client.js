@@ -41,7 +41,9 @@ function page({ product }) {
             <img
               src={item.categoryImage[deviceType]}
               alt="Mobile Header"
-              className=" w-auto h-auto object-cover rounded-lg "
+              className={`w-auto h-auto object-cover rounded-lg ${
+                index % 2 === 0 ? "order-0" : "order-1"
+              }`}
             />
             <div className="flex flex-col gap-6 items-center lg:justify-center lg:items-start">
               <span className="text-sunsetOrange text-sm font-light tracking-[.6em] uppercase">
