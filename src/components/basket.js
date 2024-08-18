@@ -9,8 +9,6 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
   useEffect(() => {
     setBasket(JSON.parse(localStorage.getItem("basket")));
   }, [basketIsOpen]);
-  console.log(basket, "basket");
-
   const removeAll = () => {
     localStorage.removeItem("basket");
     setBasket([]);
@@ -20,6 +18,27 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
     (sum, item) => sum + item.quantity * item.price,
     0
   );
+
+  const updateBasket = (newBasket) => {
+    setBasket(newBasket);
+    localStorage.setItem("basket", JSON.stringify(newBasket));
+  };
+
+  const incrementQuantity = (index) => {
+    const newBasket = [...basket];
+    newBasket[index].quantity += 1;
+    updateBasket(newBasket);
+  };
+
+  const decrementQuantity = (index) => {
+    const newBasket = [...basket];
+    if (newBasket[index].quantity > 1) {
+      newBasket[index].quantity -= 1;
+    } else {
+      newBasket.splice(index, 1);
+    }
+    updateBasket(newBasket);
+  };
 
   return (
     <Dialog
@@ -75,6 +94,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                           id="decrement-button"
                           data-input-counter-decrement="quantity-input"
                           className="p-3 h-11 bg-cloudGray"
+                          onClick={() => decrementQuantity(index)}
                         >
                           <svg
                             className="w-2 h-2 text-deepBlack opacity-25"
@@ -100,12 +120,14 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                           className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
                           placeholder={item.quantity}
                           required
+                          readOnly
                         />
                         <button
                           type="button"
                           id="increment-button"
                           data-input-counter-increment="quantity-input"
                           className=" p-3 h-11 bg-cloudGray"
+                          onClick={() => incrementQuantity(index)}
                         >
                           <svg
                             className="w-2 h-2 text-deepBlack opacity-25"
