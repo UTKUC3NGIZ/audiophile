@@ -18,6 +18,8 @@ const plans = ["e-money", "Cash on Delivery"];
 function page() {
   let [selected, setSelected] = useState(plans[0]);
   let [success, setSuccess] = useState(true);
+  const [showAll, setShowAll] = useState(false);
+
   const [basket, setBasket] = useState([]);
   useEffect(() => {
     setBasket(JSON.parse(localStorage.getItem("basket")));
@@ -385,42 +387,56 @@ function page() {
               <p className="block text-base font-medium text-deepBlack text-opacity-50">
                 You will receive an email confirmation shortly.
               </p>
-              <div className="grid grid-cols-2 w-full">
-                <div className="bg-cloudGray p-6 rounded-lg rounded-b-none md:rounded-r-none md:rounded-l col-span-2 md:col-span-1">
-                  <div className="flex justify-between mt-6 gap-4 border-b ">
-                    <div className="flex gap-4">
-                      <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                        <Image
-                          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                          alt=""
-                          width={100}
-                          height={100}
-                          className="mt-4"
-                        />
+              <div className="grid grid-cols-12 w-full">
+                <div className="bg-cloudGray p-6 rounded-lg rounded-b-none md:rounded-r-none md:rounded-l col-span-12 md:col-span-7">
+                  {basket
+                    .slice(0, showAll ? basket.length : 1)
+                    .map((item, index) => (
+                      <div
+                        className="flex justify-between mt-6 gap-4 border-b pb-2"
+                        key={index}
+                      >
+                        <div className="flex gap-4">
+                          <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                            <Image
+                              src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                              alt=""
+                              width={100}
+                              height={100}
+                              className="mt-4"
+                            />
+                          </div>
+                          <div className="flex flex-col mt-2">
+                            <h2 className="text-deepBlack text-base font-bold">
+                              {item.name}
+                            </h2>
+                            <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                              $ {item.price.toLocaleString()}
+                            </p>
+                          </div>
+                        </div>
+                        <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
+                          x{item.quantity}
+                        </span>
                       </div>
-                      <div className="flex flex-col mt-2">
-                        <h2 className="text-deepBlack text-base font-bold">
-                          XX99 MK II
-                        </h2>
-                        <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                          $ 2,999
-                        </p>
-                      </div>
-                    </div>
-                    <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
-                      x1
-                    </span>
-                  </div>
-                  <button className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3">
-                    and 2 other item(s)
-                  </button>
+                    ))}
+                  {basket.length > 1 && (
+                    <button
+                      className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3 w-full text-center"
+                      onClick={() => setShowAll(!showAll)}
+                    >
+                      {showAll
+                        ? "View less"
+                        : `and ${basket.length - 1} other item(s)`}
+                    </button>
+                  )}
                 </div>
-                <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0 md:rounded-l-none md:rounded-r col-span-2 md:col-span-1 flex flex-col md:justify-center">
+                <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0 md:rounded-l-none md:rounded-r col-span-12 md:col-span-5 flex flex-col md:justify-center">
                   <h2 className="text-base text-snowWhite opacity-50 font-medium">
                     GRAND TOTAL
                   </h2>
                   <span className="text-snowWhite text-lg font-bold">
-                    $ 5,446
+                    $ {(totalPrice * 1.2 + 50).toLocaleString()}
                   </span>
                 </div>
               </div>
