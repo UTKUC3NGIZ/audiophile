@@ -8,9 +8,15 @@ import Link from "next/link";
 function Basket({ basketIsOpen, setBasketIsOpen }) {
   const [basket, setBasket] = useState([]);
 
-  // useEffect(() => {
-  //   setBasket(JSON.parse(localStorage.getItem("basket")));
-  // }, [basketIsOpen]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedBasket = localStorage.getItem("basket");
+      if (storedBasket) {
+        setBasket(JSON.parse(storedBasket));
+      }
+    }
+  }, [basketIsOpen]);
+
   const removeAll = () => {
     localStorage.removeItem("basket");
     setBasket([]);
