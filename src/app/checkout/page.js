@@ -214,44 +214,48 @@ function page() {
                       </Field>
                     ))}
                   </RadioGroup>
-                  <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-                    <div className="sm:col-span-3 md:col-span-1">
-                      <label
-                        htmlFor="moneyNumber"
-                        className="block text-sm font-medium text-deepBlack"
-                      >
-                        e-Money Number
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          id="moneyNumber"
-                          name="moneyNumber"
-                          type="text"
-                          autoComplete="cc-number"
-                          placeholder="238521993"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                        />
+                  {selected === "e-money" && (
+                    <>
+                      <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+                        <div className="sm:col-span-3 md:col-span-1">
+                          <label
+                            htmlFor="moneyNumber"
+                            className="block text-sm font-medium text-deepBlack"
+                          >
+                            e-Money Number
+                          </label>
+                          <div className="mt-2">
+                            <input
+                              id="moneyNumber"
+                              name="moneyNumber"
+                              type="text"
+                              autoComplete="cc-number"
+                              placeholder="238521993"
+                              className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                            />
+                          </div>
+                        </div>
+                        <div className="sm:col-span-3 md:col-span-1">
+                          <label
+                            htmlFor="moneyPin"
+                            className="block text-sm font-medium text-deepBlack"
+                          >
+                            e-Money PIN
+                          </label>
+                          <div className="mt-2">
+                            <input
+                              id="moneyPin"
+                              name="moneyPin"
+                              type="text"
+                              autoComplete="cc-csc"
+                              placeholder="6891"
+                              className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="sm:col-span-3 md:col-span-1">
-                      <label
-                        htmlFor="moneyPin"
-                        className="block text-sm font-medium text-deepBlack"
-                      >
-                        e-Money PIN
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          id="moneyPin"
-                          name="moneyPin"
-                          type="text"
-                          autoComplete="cc-csc"
-                          placeholder="6891"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                        />
-                      </div>
-                    </div>
-                  </div>
+                    </>
+                  )}
                 </div>
               </div>
             </form>
