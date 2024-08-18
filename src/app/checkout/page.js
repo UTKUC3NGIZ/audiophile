@@ -279,13 +279,13 @@ function page() {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-row gap-8">
+                  <div className="flex flex-row gap-8 items-center">
                     <Image
                       src="/assets/checkout/icon-cash-on-delivery.svg"
                       alt=""
                       width={48}
                       height={48}
-                      className=" pb-2"
+                      className=" pb-2 hidden md:block lg:w-[32px] lg:h-[32px]"
                     />
                     <p className="text-deepBlack text-base text-opacity-50">
                       The ‘Cash on Delivery’ option enables you to pay in cash

@@ -8,12 +8,14 @@ function footer() {
       <span className="bg-sunsetOrange w-[101px] h-[4px] absolute translate-x-1/2 right-1/2 md:left-0 md:translate-x-0 ml-6 md:ml-10 lg:ml-40 top-0"></span>
       <div className="flex gap-12 flex-col lg:flex-row lg:justify-between lg:w-full ">
         <div>
-          <Image
-            src="/assets/shared/desktop/logo.svg"
-            alt="Logo"
-            width={143}
-            height={25}
-          />
+          <Link href={"/"}>
+            <Image
+              src="/assets/shared/desktop/logo.svg"
+              alt="Logo"
+              width={143}
+              height={25}
+            />
+          </Link>
         </div>
         <div>
           <ul className="text-sm font-bold uppercase flex justify-center flex-col md:flex-row gap-4 text-center tracking-widest">
@@ -72,7 +74,7 @@ function footer() {
         </div>
         <div className="flex flex-col md:flex-row md:justify-between md:w-full gap-12">
           <span className="text-pureWhite text-opacity-50 text-base font-bold text-center">
-            Copyright 2021. All Rights Reserved
+            Copyright 2024. All Rights Reserved
           </span>
           <div className="flex flex-row gap-4 justify-center items-center lg:hidden">
             <Link href="https://www.facebook.com/">
