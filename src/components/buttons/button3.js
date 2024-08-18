@@ -1,9 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-function button2() {
+function button3({ url }) {
   return (
-    <button className="py-4 px-8 bg-transparent text-deepBlack text-opacity-50 font-bold text-sm uppercase font-sans hover:text-sunsetOrange hover:text-opacity-100 ">
+    <Link
+      href={`/category/${url}`}
+      className="py-4 px-8 bg-transparent text-deepBlack text-opacity-50 font-bold text-sm uppercase font-sans hover:text-sunsetOrange hover:text-opacity-100 "
+    >
       Shop
       <span className="inline-block ml-2">
         <Image
@@ -13,8 +17,8 @@ function button2() {
           height={8}
         />
       </span>
-    </button>
+    </Link>
   );
 }
 
-export default button2;
+export default button3;

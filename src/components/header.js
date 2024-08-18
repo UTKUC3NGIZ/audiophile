@@ -5,6 +5,7 @@ import { useState } from "react";
 import Basket from "@/components/basket";
 import HamburgerMenu from "@/components/hamburgerMenu";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 function header() {
   const colorVariants = {
@@ -39,22 +40,26 @@ function header() {
             height={16}
           />
         </button>
-        <Image
-          src="/assets/shared/desktop/logo.svg"
-          alt="Logo"
-          width={143}
-          height={25}
-          className="hidden md:block"
-        />
+        <Link href={"/"}>
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="Logo"
+            width={143}
+            height={25}
+            className="hidden md:block"
+          />
+        </Link>
       </div>
       <div>
-        <Image
-          src="/assets/shared/desktop/logo.svg"
-          alt="Logo"
-          width={143}
-          height={25}
-          className="md:hidden"
-        />
+        <Link href={"/"}>
+          <Image
+            src="/assets/shared/desktop/logo.svg"
+            alt="Logo"
+            width={143}
+            height={25}
+            className="md:hidden"
+          />
+        </Link>
         <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <a

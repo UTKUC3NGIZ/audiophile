@@ -15,7 +15,7 @@ function menu() {
         </div>
         <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">
           <span className="text-deepBlack text-sm">Headphones</span>
-          <Button3 />
+          <Button3 url={"headphones"} />
         </div>
       </div>
       <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
@@ -29,7 +29,7 @@ function menu() {
         </div>
         <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">
           <span className="text-deepBlack text-sm">SPEAKERS</span>
-          <Button3 />
+          <Button3 url={"speakers"} />
         </div>
       </div>
       <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
@@ -43,7 +43,7 @@ function menu() {
         </div>
         <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">
           <span className="text-deepBlack text-sm">EARPHONES</span>
-          <Button3 />
+          <Button3 url={"earphones"} />
         </div>
       </div>
     </div>
