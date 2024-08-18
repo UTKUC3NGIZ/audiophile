@@ -43,216 +43,218 @@ function page() {
         <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-8">
           <div className="p-6 bg-pureWhite rounded-lg mb-8 col-span-8">
             <h1 className="text-deepBlack text-3xl font-bold">CHECKOUT</h1>
-            <div className="pt-8">
-              <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
-                Billing details
-              </h2>
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Name
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        autoComplete="name"
-                        placeholder="Alexei Ward"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Email Address
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="email"
-                        name="email"
-                        type="text"
-                        autoComplete="email"
-                        placeholder="alexei@mail.com"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Phone Number
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="text"
-                        autoComplete="tel"
-                        placeholder="+1 202-555-0136"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="pt-8">
-              <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
-                shipping info
-              </h2>
-              <div className="flex flex-col gap-6">
-                <div className="sm:col-span-3">
-                  <label
-                    htmlFor="address"
-                    className="block text-sm font-medium text-deepBlack"
-                  >
-                    Your Address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="address"
-                      name="address"
-                      type="text"
-                      autoComplete="address-level1"
-                      placeholder="1137 Williams Avenue"
-                      className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="zip"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      ZIP Code
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="zip"
-                        name="zip"
-                        type="text"
-                        autoComplete="postal-code"
-                        placeholder="10001"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="city"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      City
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="city"
-                        name="city"
-                        type="text"
-                        autoComplete="address-level2"
-                        placeholder="New York"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="country"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Country
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="country"
-                        name="country"
-                        type="text"
-                        autoComplete="country"
-                        placeholder="United States"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="pt-8">
-              <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
-                payment details
-              </h2>
-              <div className="flex flex-col gap-6">
-                <RadioGroup
-                  value={selected}
-                  onChange={setSelected}
-                  aria-label="Server size"
-                  className="flex flex-col gap-4 md:justify-end md:items-end"
-                >
-                  {plans.map((plan) => (
-                    <Field
-                      key={plan}
-                      className="flex flex-row gap-4 items-center w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm md:w-1/2"
-                    >
-                      <Radio
-                        value={plan}
-                        className="group flex size-5 items-center justify-center rounded-full border bg-white data-[checked]:bg-sunsetOrange "
+            <form action="">
+              <div className="pt-8">
+                <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
+                  Billing details
+                </h2>
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-deepBlack"
                       >
-                        <span className="invisible size-2 rounded-full bg-white group-data-[checked]:visible" />
-                      </Radio>
-                      <Label className="text-deepBlack">{plan}</Label>
-                    </Field>
-                  ))}
-                </RadioGroup>
-                <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="moneyNumber"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      e-Money Number
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="moneyNumber"
-                        name="moneyNumber"
-                        type="text"
-                        autoComplete="cc-number"
-                        placeholder="238521993"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
+                        Name
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          autoComplete="name"
+                          placeholder="Alexei Ward"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="moneyPin"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      e-Money PIN
-                    </label>
-                    <div className="mt-2">
-                      <input
-                        id="moneyPin"
-                        name="moneyPin"
-                        type="text"
-                        autoComplete="cc-csc"
-                        placeholder="6891"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                      />
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        Email Address
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="email"
+                          name="email"
+                          type="text"
+                          autoComplete="email"
+                          placeholder="alexei@mail.com"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        Phone Number
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="text"
+                          autoComplete="tel"
+                          placeholder="+1 202-555-0136"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="pt-8">
+                <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
+                  shipping info
+                </h2>
+                <div className="flex flex-col gap-6">
+                  <div className="sm:col-span-3">
+                    <label
+                      htmlFor="address"
+                      className="block text-sm font-medium text-deepBlack"
+                    >
+                      Your Address
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="address"
+                        name="address"
+                        type="text"
+                        autoComplete="address-level1"
+                        placeholder="1137 Williams Avenue"
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="zip"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        ZIP Code
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="zip"
+                          name="zip"
+                          type="text"
+                          autoComplete="postal-code"
+                          placeholder="10001"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="city"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        City
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="city"
+                          name="city"
+                          type="text"
+                          autoComplete="address-level2"
+                          placeholder="New York"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="country"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        Country
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="country"
+                          name="country"
+                          type="text"
+                          autoComplete="country"
+                          placeholder="United States"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-8">
+                <h2 className="text-sunsetOrange text-sm font-bold pb-4 uppercase">
+                  payment details
+                </h2>
+                <div className="flex flex-col gap-6">
+                  <RadioGroup
+                    value={selected}
+                    onChange={setSelected}
+                    aria-label="Server size"
+                    className="flex flex-col gap-4 md:justify-end md:items-end"
+                  >
+                    {plans.map((plan) => (
+                      <Field
+                        key={plan}
+                        className="flex flex-row gap-4 items-center w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm md:w-1/2"
+                      >
+                        <Radio
+                          value={plan}
+                          className="group flex size-5 items-center justify-center rounded-full border bg-white data-[checked]:bg-sunsetOrange "
+                        >
+                          <span className="invisible size-2 rounded-full bg-white group-data-[checked]:visible" />
+                        </Radio>
+                        <Label className="text-deepBlack">{plan}</Label>
+                      </Field>
+                    ))}
+                  </RadioGroup>
+                  <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="moneyNumber"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        e-Money Number
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="moneyNumber"
+                          name="moneyNumber"
+                          type="text"
+                          autoComplete="cc-number"
+                          placeholder="238521993"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="moneyPin"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        e-Money PIN
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="moneyPin"
+                          name="moneyPin"
+                          type="text"
+                          autoComplete="cc-csc"
+                          placeholder="6891"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
           <div className="p-6 bg-pureWhite rounded-lg col-span-4 lg:h-fit">
             <h1 className="text-deepBlack text-3xl font-bold uppercase">
