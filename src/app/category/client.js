@@ -56,8 +56,7 @@ function page({ product }) {
                 {item.description}
               </p>
               <div className="w-fit">
-                <Link href={`/product-detail/${item.id}`}>
-                  {" "}
+                <Link href={`/product-detail/${item.slug}`}>
                   <Button1 color={"orange"} content={"See Product"} />{" "}
                 </Link>
               </div>
