@@ -4,7 +4,7 @@ import Button1 from "@/components/buttons/button1";
 
 export default function ClientComponent({ product }) {
   const [deviceType, setDeviceType] = useState("mobile");
-
+  const [count, setCount] = useState(1);
   useEffect(() => {
     const updateDeviceType = () => {
       const screen = window.matchMedia("(min-width: 768px)");
@@ -25,6 +25,16 @@ export default function ClientComponent({ product }) {
 
     return () => window.removeEventListener("resize", updateDeviceType);
   }, [product]);
+  const addBasket = () => {
+    const basket = JSON.parse(localStorage.getItem("basket")) || [];
+    const productIndex = basket.findIndex((item) => item.id === product.id);
+    if (productIndex === -1) {
+      basket.push({ ...product, quantity: count });
+    } else {
+      basket[productIndex].quantity += count;
+    }
+    localStorage.setItem("basket", JSON.stringify(basket));
+  };
   return (
     <div>
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
@@ -63,6 +73,9 @@ export default function ClientComponent({ product }) {
                   id="decrement-button"
                   data-input-counter-decrement="quantity-input"
                   className="p-3 h-11 bg-cloudGray"
+                  onClick={() =>
+                    setCount((prevCount) => Math.max(prevCount - 1, 1))
+                  }
                 >
                   <svg
                     className="w-2 h-2 text-deepBlack opacity-25"
@@ -86,7 +99,7 @@ export default function ClientComponent({ product }) {
                   data-input-counter
                   aria-describedby="helper-text-explanation"
                   className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
-                  placeholder="2"
+                  placeholder={count}
                   required
                 />
                 <button
@@ -94,6 +107,7 @@ export default function ClientComponent({ product }) {
                   id="increment-button"
                   data-input-counter-increment="quantity-input"
                   className=" p-3 h-11 bg-cloudGray"
+                  onClick={() => setCount(count + 1)}
                 >
                   <svg
                     className="w-2 h-2 text-deepBlack opacity-25"
@@ -112,7 +126,9 @@ export default function ClientComponent({ product }) {
                   </svg>
                 </button>
               </div>
-              <Button1 color={"orange"} content={"Add To Cart"} />
+              <span className="w-full" onClick={() => addBasket()}>
+                <Button1 color={"orange"} content={"Add To Cart"} />
+              </span>
             </div>
           </div>
         </div>

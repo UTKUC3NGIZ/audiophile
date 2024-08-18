@@ -1,10 +1,26 @@
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Button1 from "@/components/buttons/button1";
 import Link from "next/link";
 
 function basket({ basketIsOpen, setBasketIsOpen }) {
+  const [basket, setBasket] = React.useState([]);
+  useEffect(() => {
+    setBasket(JSON.parse(localStorage.getItem("basket")));
+  }, [basketIsOpen]);
+  console.log(basket, "basket");
+
+  const removeAll = () => {
+    localStorage.removeItem("basket");
+    setBasket([]);
+  };
+
+  const totalPrice = basket.reduce(
+    (sum, item) => sum + item.quantity * item.price,
+    0
+  );
+
   return (
     <Dialog
       open={basketIsOpen}
@@ -19,9 +35,12 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
           <div>
             <div className="flex justify-between">
               <h2 className="text-deepBlack text-lg font-bold uppercase">
-                Cart (3)
+                Cart ({basket?.length})
               </h2>
-              <button className="text-deepBlack text-opacity-50 underline">
+              <button
+                className="text-deepBlack text-opacity-50 underline"
+                onClick={() => removeAll()}
+              >
                 Remove All
               </button>
             </div>
@@ -270,7 +289,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                 Total
               </h2>
               <button className="text-deepBlack text-lg font-bold">
-                $ 5,396
+                $ {totalPrice.toLocaleString()}
               </button>
             </div>
             <div className="mt-6">
