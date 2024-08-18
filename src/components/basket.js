@@ -1,6 +1,7 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import Button1 from "@/components/buttons/button1";
 import Link from "next/link";
 

@@ -89,7 +89,7 @@ function Header() {
         setHamburgerIsOpen={setHamburgerIsOpen}
       />
       {/* Basket */}
-      {/* <Basket basketIsOpen={basketIsOpen} setBasketIsOpen={setBasketIsOpen} /> */}
+      <Basket basketIsOpen={basketIsOpen} setBasketIsOpen={setBasketIsOpen} />
     </div>
   );
 }
