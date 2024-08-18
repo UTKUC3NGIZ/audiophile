@@ -12,7 +12,7 @@ function Header() {
     transparent: "bg-transparent ",
   };
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
-  // const [basketIsOpen, setBasketIsOpen] = useState(false);
+  const [basketIsOpen, setBasketIsOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
