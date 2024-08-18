@@ -6,7 +6,7 @@ import Menu from "@/components/menu";
 export default async function Page({ params }) {
   const file = await fs.readFile(process.cwd() + "/src/data.json", "utf8");
   const data = JSON.parse(file);
-  const product = data.find((item) => item.slug === params.productId);
+  const product = data.find((item) => item.slug === params.product);
 
   return (
     <div className="pt-[88px] max-w-[1440px] m-auto">

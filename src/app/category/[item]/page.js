@@ -6,7 +6,7 @@ import Menu from "@/components/menu";
 export default async function Page({ params }) {
   const file = await fs.readFile(process.cwd() + "/src/data.json", "utf8");
   const data = JSON.parse(file);
-  const product = data.filter((item) => item.category === params.itemName);
+  const product = data.filter((item) => item.category === params.item);
   return (
     <div className="pt-[88px]">
       <ClientComponent product={product} />
