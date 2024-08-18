@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Button1 from "@/components/buttons/button1";
 import Link from "next/link";
-function page({ product }) {
+function Page({ product }) {
   const [deviceType, setDeviceType] = useState("mobile");
 
   useEffect(() => {
@@ -68,4 +68,4 @@ function page({ product }) {
   );
 }
 
-export default page;
+export default Page;
