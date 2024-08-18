@@ -1,13 +1,15 @@
-import React from "react";
-import Content from "@/components/content";
-import Menu from "@/components/menu";
+"use client";
+import React, { useEffect } from "react";
 import Button1 from "@/components/buttons/button1";
-function page() {
+function page({ product }) {
+  useEffect(() => {
+    console.log(product);
+  }, [product]);
   return (
-    <div className="pt-[88px] ">
+    <div>
       <div className="bg-midnightBlack flex justify-center py-8 ">
         <h1 className="uppercase text-3xl text-pureWhite font-bold">
-          HEADPHONES
+          {product[0].category}
         </h1>
       </div>
       <div className="flex flex-col gap-14 pb-20">
@@ -114,8 +116,6 @@ function page() {
           </div>
         </div>
       </div>
-      <Menu />
-      <Content />
     </div>
   );
 }
