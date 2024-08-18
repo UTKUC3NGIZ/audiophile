@@ -47,240 +47,86 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
             {/* basket product */}
             <div>
               <div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
+                {basket.map((item, index) => (
+                  <div className="flex justify-between mt-6 gap-4" key={index}>
+                    <div className="flex gap-4">
+                      <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                        <Image
+                          src={`/assets/cart/image-${item.slug}.jpg`}
+                          alt=""
+                          width={100}
+                          height={100}
+                          className="mt-4"
+                        />
+                      </div>
+                      <div>
+                        <h2 className="text-deepBlack text-base font-bold">
+                          {item.name}
+                        </h2>
+                        <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                          $ {item.price}
+                        </p>
+                      </div>
                     </div>
                     <div>
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX99 MK II
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 2,999
-                      </p>
+                      <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
+                        <button
+                          type="button"
+                          id="decrement-button"
+                          data-input-counter-decrement="quantity-input"
+                          className="p-3 h-11 bg-cloudGray"
+                        >
+                          <svg
+                            className="w-2 h-2 text-deepBlack opacity-25"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M1 1h16"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          id="quantity-input"
+                          data-input-counter
+                          aria-describedby="helper-text-explanation"
+                          className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                          placeholder={item.quantity}
+                          required
+                        />
+                        <button
+                          type="button"
+                          id="increment-button"
+                          data-input-counter-increment="quantity-input"
+                          className=" p-3 h-11 bg-cloudGray"
+                        >
+                          <svg
+                            className="w-2 h-2 text-deepBlack opacity-25"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="quantity-input"
-                        className="p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="quantity-input"
-                        data-input-counter
-                        aria-describedby="helper-text-explanation"
-                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
-                        placeholder="1"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="quantity-input"
-                        className=" p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
-                    </div>
-                    <div>
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX59
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 899
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="quantity-input"
-                        className="p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="quantity-input"
-                        data-input-counter
-                        aria-describedby="helper-text-explanation"
-                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
-                        placeholder="2"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="quantity-input"
-                        className=" p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between mt-6 gap-4">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
-                    </div>
-                    <div>
-                      <h2 className="text-deepBlack text-base font-bold">
-                        YX1
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 599
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="relative flex items-center max-w-[6rem] max-h-[2rem] overflow-hidden">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="quantity-input"
-                        className="p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="quantity-input"
-                        data-input-counter
-                        aria-describedby="helper-text-explanation"
-                        className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
-                        placeholder="1"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="quantity-input"
-                        className=" p-3 h-11 bg-cloudGray"
-                      >
-                        <svg
-                          className="w-2 h-2 text-deepBlack opacity-25"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             {/* Bashet Footer */}
