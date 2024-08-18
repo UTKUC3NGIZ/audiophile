@@ -15,7 +15,7 @@ function Header() {
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
   const [basketIsOpen, setBasketIsOpen] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  // const isHomePage = pathname === "/";
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -26,9 +26,7 @@ function Header() {
 
   return (
     <div
-      className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full z-50 ${
-        isHomePage ? colorVariants.transparent : colorVariants.black
-      }`}
+      className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full z-50 `}
     >
       {/* Header Menu */}
       <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
