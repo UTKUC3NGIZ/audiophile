@@ -1,7 +1,7 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
 import Basket from "@/components/basket";
 import HamburgerMenu from "@/components/hamburgerMenu";
 import { usePathname } from "next/navigation";
