@@ -21,11 +21,10 @@ function hamburgerMenu({ hamburgerIsOpen, setHamburgerIsOpen }) {
           <div className="flex gap-12 md:gap-3 flex-col md:flex-row ">
             <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
               <div className="absolute -top-10 ">
-                <Image
+                <img
                   src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
                   alt=""
-                  width={130}
-                  height={160}
+                  className="w-[130px]"
                 />
               </div>
               <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">
@@ -35,11 +34,10 @@ function hamburgerMenu({ hamburgerIsOpen, setHamburgerIsOpen }) {
             </div>
             <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
               <div className="absolute -top-10 ">
-                <Image
+                <img
                   src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
                   alt=""
-                  width={130}
-                  height={160}
+                  className="w-[130px]"
                 />
               </div>
               <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">
@@ -49,11 +47,10 @@ function hamburgerMenu({ hamburgerIsOpen, setHamburgerIsOpen }) {
             </div>
             <div className="bg-cloudGray flex items-center flex-col rounded-lg relative md:w-screen">
               <div className="absolute -top-10 ">
-                <Image
+                <img
                   src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
                   alt=""
-                  width={130}
-                  height={160}
+                  className="w-[130px]"
                 />
               </div>
               <div className="pt-12 text-center font-bold uppercase mt-9 flex flex-col">

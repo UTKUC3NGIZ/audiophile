@@ -21,10 +21,19 @@ function page() {
 
   const [basket, setBasket] = useState([]);
   useEffect(() => {
-    setBasket(JSON.parse(localStorage.getItem("basket")));
+    const fetchBasket = async () => {
+      const storedBasket = JSON.parse(localStorage.getItem("basket"));
+      setBasket(storedBasket);
+
+      if (storedBasket === null || storedBasket.length === 0) {
+        window.location.href = "/";
+      }
+    };
+
+    fetchBasket();
   }, []);
 
-  const totalPrice = basket.reduce(
+  const totalPrice = basket?.reduce(
     (sum, item) => sum + item.quantity * item.price,
     0
   );
@@ -297,7 +306,7 @@ function page() {
               {/* basket product */}
 
               <div>
-                {basket.map((item, index) => (
+                {basket?.map((item, index) => (
                   <div className="flex justify-between mt-6 gap-4" key={index}>
                     <div className="flex gap-4">
                       <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
@@ -331,7 +340,7 @@ function page() {
                   Total
                 </h2>
                 <button className="text-deepBlack text-lg font-bold">
-                  $ {totalPrice.toLocaleString()}
+                  $ {totalPrice?.toLocaleString()}
                 </button>
               </div>
               <div className="flex justify-between pt-2">
@@ -389,7 +398,7 @@ function page() {
               <div className="grid grid-cols-12 w-full">
                 <div className="bg-cloudGray p-6 rounded-lg rounded-b-none md:rounded-r-none md:rounded-l col-span-12 md:col-span-7">
                   {basket
-                    .slice(0, showAll ? basket.length : 1)
+                    ?.slice(0, showAll ? basket.length : 1)
                     .map((item, index) => (
                       <div
                         className="flex justify-between mt-6 gap-4 border-b pb-2"
@@ -419,9 +428,9 @@ function page() {
                         </span>
                       </div>
                     ))}
-                  {basket.length > 1 && (
+                  {basket?.length > 1 && (
                     <button
-                      className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3 w-full text-center"
+                      className="text-xs font-bold text-deepBlack opacity-50  pt-3 w-full text-center"
                       onClick={() => setShowAll(!showAll)}
                     >
                       {showAll
