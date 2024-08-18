@@ -28,7 +28,10 @@ export default function ClientComponent({ product }) {
   return (
     <div>
       <div className=" flex justify-start px-6 md:px-10 lg:px-40 pt-4 pb-6">
-        <button className="text-base text-deepBlack text-opacity-50 font-medium">
+        <button
+          className="text-base text-deepBlack text-opacity-50 font-medium"
+          onClick={() => window.history.back()}
+        >
           Go Back
         </button>
       </div>

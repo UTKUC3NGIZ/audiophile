@@ -24,7 +24,10 @@ function page() {
     <div className="bg-cloudGray">
       <div className="pt-[88px] max-w-[1440px] m-auto px-6 md:px-10 lg:px-40  pb-24">
         <div className=" flex justify-start pt-4 pb-6">
-          <button className="text-base text-deepBlack text-opacity-50 font-medium">
+          <button
+            className="text-base text-deepBlack text-opacity-50 font-medium"
+            onClick={() => window.history.back()}
+          >
             Go Back
           </button>
         </div>
