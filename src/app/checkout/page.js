@@ -17,7 +17,7 @@ const plans = ["e-money", "Cash on Delivery"];
 
 function page() {
   let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(false);
+  let [success, setSuccess] = useState(true);
   const [basket, setBasket] = useState([]);
   useEffect(() => {
     setBasket(JSON.parse(localStorage.getItem("basket")));
@@ -227,49 +227,63 @@ function page() {
                     </Field>
                   ))}
                 </RadioGroup>
-                {selected === "e-money" && (
-                  <>
-                    <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-                      <div className="sm:col-span-3 md:col-span-1">
-                        <label
-                          htmlFor="moneyNumber"
-                          className="block text-sm font-medium text-deepBlack"
-                        >
-                          e-Money Number
-                        </label>
-                        <div className="mt-2">
-                          <input
-                            id="moneyNumber"
-                            name="moneyNumber"
-                            type="number"
-                            autoComplete="cc-number"
-                            placeholder="238521993"
-                            className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="sm:col-span-3 md:col-span-1">
-                        <label
-                          htmlFor="moneyPin"
-                          className="block text-sm font-medium text-deepBlack"
-                        >
-                          e-Money PIN
-                        </label>
-                        <div className="mt-2">
-                          <input
-                            id="moneyPin"
-                            name="moneyPin"
-                            type="number"
-                            autoComplete="cc-csc"
-                            placeholder="6891"
-                            className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
-                            required
-                          />
-                        </div>
+                {selected === "e-money" ? (
+                  <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="moneyNumber"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        e-Money Number
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="moneyNumber"
+                          name="moneyNumber"
+                          type="number"
+                          autoComplete="cc-number"
+                          placeholder="238521993"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                          required
+                        />
                       </div>
                     </div>
-                  </>
+                    <div className="sm:col-span-3 md:col-span-1">
+                      <label
+                        htmlFor="moneyPin"
+                        className="block text-sm font-medium text-deepBlack"
+                      >
+                        e-Money PIN
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="moneyPin"
+                          name="moneyPin"
+                          type="number"
+                          autoComplete="cc-csc"
+                          placeholder="6891"
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-row gap-8">
+                    <Image
+                      src="/assets/checkout/icon-cash-on-delivery.svg"
+                      alt=""
+                      width={48}
+                      height={48}
+                      className=" pb-2"
+                    />
+                    <p className="text-deepBlack text-base text-opacity-50">
+                      The ‘Cash on Delivery’ option enables you to pay in cash
+                      when our delivery courier arrives at your residence. Just
+                      make sure your address is correct so that your order will
+                      not be cancelled.
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
@@ -371,42 +385,44 @@ function page() {
               <p className="block text-base font-medium text-deepBlack text-opacity-50">
                 You will receive an email confirmation shortly.
               </p>
-              <div className="bg-cloudGray p-6 rounded-lg rounded-b-none">
-                <div className="flex justify-between mt-6 gap-4 border-b ">
-                  <div className="flex gap-4">
-                    <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
-                      <Image
-                        src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
-                        alt=""
-                        width={100}
-                        height={100}
-                        className="mt-4"
-                      />
+              <div className="grid grid-cols-2 w-full">
+                <div className="bg-cloudGray p-6 rounded-lg rounded-b-none md:rounded-r-none md:rounded-l col-span-2 md:col-span-1">
+                  <div className="flex justify-between mt-6 gap-4 border-b ">
+                    <div className="flex gap-4">
+                      <div className="bg-cloudGray w-16 h-16 flex justify-center items-center rounded-lg">
+                        <Image
+                          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
+                          alt=""
+                          width={100}
+                          height={100}
+                          className="mt-4"
+                        />
+                      </div>
+                      <div className="flex flex-col mt-2">
+                        <h2 className="text-deepBlack text-base font-bold">
+                          XX99 MK II
+                        </h2>
+                        <p className="text-deepBlack text-opacity-50 font-bold text-sm">
+                          $ 2,999
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex flex-col mt-2">
-                      <h2 className="text-deepBlack text-base font-bold">
-                        XX99 MK II
-                      </h2>
-                      <p className="text-deepBlack text-opacity-50 font-bold text-sm">
-                        $ 2,999
-                      </p>
-                    </div>
+                    <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
+                      x1
+                    </span>
                   </div>
-                  <span className="text-deepBlack text-opacity-50 text-base font-bold mt-2">
-                    x1
+                  <button className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3">
+                    and 2 other item(s)
+                  </button>
+                </div>
+                <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0 md:rounded-l-none md:rounded-r col-span-2 md:col-span-1 flex flex-col md:justify-center">
+                  <h2 className="text-base text-snowWhite opacity-50 font-medium">
+                    GRAND TOTAL
+                  </h2>
+                  <span className="text-snowWhite text-lg font-bold">
+                    $ 5,446
                   </span>
                 </div>
-                <p className="text-xs font-bold text-deepBlack opacity-50 text-center pt-3">
-                  and 2 other item(s)
-                </p>
-              </div>
-              <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0">
-                <h2 className="text-base text-snowWhite opacity-50 font-medium">
-                  GRAND TOTAL
-                </h2>
-                <span className="text-snowWhite text-lg font-bold">
-                  $ 5,446
-                </span>
               </div>
               <div className="flex gap-4 ">
                 <div onClick={() => setSuccess(false)} className="w-full">

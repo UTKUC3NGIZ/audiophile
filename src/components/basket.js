@@ -57,7 +57,7 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
                 Cart ({basket?.length})
               </h2>
               <button
-                className="text-deepBlack text-opacity-50 underline"
+                className="text-deepBlack text-opacity-50 underline hover:text-sunsetOrange"
                 onClick={() => removeAll()}
               >
                 Remove All
