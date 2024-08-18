@@ -18,10 +18,10 @@ function header() {
   const isHomePage = pathname === "/";
 
   const navigation = [
-    { name: "Home", href: "#" },
-    { name: "HEADPHONES", href: "#" },
-    { name: "SPEAKERS", href: "#" },
-    { name: "EARPHONES", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "HEADPHONES", href: "/category/headphones" },
+    { name: "SPEAKERS", href: "/category/speakers" },
+    { name: "EARPHONES", href: "/category/earphones" },
   ];
 
   return (
@@ -62,13 +62,13 @@ function header() {
         </Link>
         <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-sm font-bold text-pureWhite uppercase"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -2,6 +2,7 @@
 import Button1 from "@/components/buttons/button1";
 import Menu from "@/components/menu";
 import Content from "@/components/content";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,7 +43,9 @@ export default function Home() {
           </div>
           <div className="lg:w-full">
             <div className="flex w-fit">
-              <Button1 content={"See Product"} color={"orange"} />
+              <Link href={"/product-detail/xx99-mark-two-headphones"}>
+                <Button1 content={"See Product"} color={"orange"} />
+              </Link>
             </div>
           </div>
         </div>
@@ -82,7 +85,9 @@ export default function Home() {
                 </h3>
                 <div className=" lg:mx-auto lg:text-start lg:w-full">
                   <div className="w-fit">
-                    <Button1 content={"See Product"} color={"black"} />
+                    <Link href={"/product-detail/zx9-speaker"}>
+                      <Button1 content={"See Product"} color={"black"} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -115,7 +120,9 @@ export default function Home() {
             ZX7 SPEAKER
           </h2>
           <div className="w-fit">
-            <Button1 content={"See Product"} color={"transparent"} />
+            <Link href={"/product-detail/zx7-speaker"}>
+              <Button1 content={"See Product"} color={"transparent"} />
+            </Link>
           </div>
         </div>
       </div>
@@ -142,7 +149,9 @@ export default function Home() {
               YX1 EARPHONES
             </h2>
             <div className="w-fit">
-              <Button1 content={"See Product"} color={"transparent"} />
+              <Link href={"/product-detail/yx1-earphones"}>
+                <Button1 content={"See Product"} color={"transparent"} />
+              </Link>
             </div>
           </div>
         </div>

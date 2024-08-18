@@ -2,6 +2,7 @@ import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import Image from "next/image";
 import React from "react";
 import Button1 from "@/components/buttons/button1";
+import Link from "next/link";
 
 function basket({ basketIsOpen, setBasketIsOpen }) {
   return (
@@ -273,7 +274,9 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
               </button>
             </div>
             <div className="mt-6">
-              <Button1 content={"Checkout"} color={"orange"} />
+              <Link href={"/checkout"} onClick={() => setBasketIsOpen(false)}>
+                <Button1 content={"Checkout"} color={"orange"} />
+              </Link>
             </div>
           </div>
         </DialogPanel>

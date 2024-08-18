@@ -18,7 +18,7 @@ const plans = ["e-money", "Cash on Delivery"];
 
 function page() {
   let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(true);
+  let [success, setSuccess] = useState(false);
 
   return (
     <div className="bg-cloudGray">

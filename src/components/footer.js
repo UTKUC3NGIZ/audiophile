@@ -17,10 +17,21 @@ function footer() {
         </div>
         <div>
           <ul className="text-sm font-bold uppercase flex justify-center flex-col md:flex-row gap-4 text-center tracking-widest">
-            <li>Home</li>
-            <li>HEADPHONES</li>
-            <li>SPEAKERS</li>
-            <li>EARPHONES</li>
+            <li>
+              <Link href={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link href={"/category/headphones"} className="uppercase">
+                HEADPHONES
+              </Link>
+            </li>
+            <Link href={"/category/speakers"} className="uppercase">
+              speakers
+            </Link>
+
+            <Link href={"/category/earphones"} className="uppercase">
+              earphones
+            </Link>
           </ul>
         </div>
       </div>
