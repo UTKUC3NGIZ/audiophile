@@ -40,10 +40,10 @@ function footer() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-row lg:justify-between lg:items-end">
           <p className="text-pureWhite text-opacity-50 text-base font-medium text-center md:text-start lg:w-1/2">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most out of personal audio. Come
+            and visit our demo facility - we&apos;re open 7 days a week.
           </p>
           <div className="lg:flex flex-row gap-4 justify-center items-center hidden">
             <Link href="https://www.facebook.com/">

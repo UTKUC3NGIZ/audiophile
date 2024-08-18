@@ -7,7 +7,7 @@ import HamburgerMenu from "@/components/hamburgerMenu";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-function header() {
+function Header() {
   const colorVariants = {
     black: "bg-midnightBlack ",
     transparent: "bg-transparent ",
@@ -95,4 +95,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

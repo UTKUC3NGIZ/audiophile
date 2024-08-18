@@ -14,7 +14,7 @@ import Image from "next/image";
 
 const plans = ["e-money", "Cash on Delivery"];
 
-function page() {
+function Page() {
   let [selected, setSelected] = useState(plans[0]);
   let [success, setSuccess] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -461,4 +461,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

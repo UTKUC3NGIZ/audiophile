@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 import Button1 from "@/components/buttons/button1";
 import Link from "next/link";
 
-function basket({ basketIsOpen, setBasketIsOpen }) {
-  const [basket, setBasket] = React.useState([]);
+function Basket({ basketIsOpen, setBasketIsOpen }) {
+  const [basket, setBasket] = useState([]);
 
   useEffect(() => {
     setBasket(JSON.parse(localStorage.getItem("basket")));
@@ -182,4 +182,4 @@ function basket({ basketIsOpen, setBasketIsOpen }) {
   );
 }
 
-export default basket;
+export default Basket;
