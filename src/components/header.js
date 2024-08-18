@@ -11,8 +11,8 @@ function Header() {
     black: "bg-midnightBlack ",
     transparent: "bg-transparent ",
   };
-  const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
-  const [basketIsOpen, setBasketIsOpen] = useState(false);
+  // const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
+  // const [basketIsOpen, setBasketIsOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -84,12 +84,12 @@ function Header() {
       </button>
       <span className="w-[90%] h-[1px] bg-cloudGray opacity-50 absolute translate-y-1/2 translate-x-1/2 bottom-0 right-1/2"></span>
       {/* Hamburger Menu */}
-      <HamburgerMenu
+      {/* <HamburgerMenu
         hamburgerIsOpen={hamburgerIsOpen}
         setHamburgerIsOpen={setHamburgerIsOpen}
-      />
+      /> */}
       {/* Basket */}
-      <Basket basketIsOpen={basketIsOpen} setBasketIsOpen={setBasketIsOpen} />
+      {/* <Basket basketIsOpen={basketIsOpen} setBasketIsOpen={setBasketIsOpen} /> */}
     </div>
   );
 }
