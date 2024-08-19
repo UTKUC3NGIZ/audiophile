@@ -17,7 +17,7 @@ const plans = ["e-money", "Cash on Delivery "];
 
 function Page() {
   let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(false);
+  let [success, setSuccess] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
   const [basket, setBasket] = useState([]);
@@ -415,12 +415,12 @@ function Page() {
                             <Image
                               src={`/assets/cart/image-${item.slug}.jpg`}
                               alt=""
-                              width={100}
-                              height={100}
+                              width={64}
+                              height={64}
                               className="mt-4"
                             />
                           </div>
-                          <div className="flex flex-col mt-2">
+                          <div className="flex flex-col mt-2 max-w-20">
                             <h2 className="text-deepBlack text-base font-bold">
                               {item.name}
                             </h2>
@@ -436,7 +436,7 @@ function Page() {
                     ))}
                   {basket?.length > 1 && (
                     <button
-                      className="text-xs font-bold text-deepBlack opacity-50  pt-3 w-full text-center"
+                      className="text-xs font-bold text-deepBlack opacity-50  pt-6 w-full text-center"
                       onClick={() => setShowAll(!showAll)}
                     >
                       {showAll
@@ -445,7 +445,11 @@ function Page() {
                     </button>
                   )}
                 </div>
-                <div className="bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0 md:rounded-l-none md:rounded-r col-span-12 md:col-span-5 flex flex-col md:justify-center">
+                <div
+                  className={`bg-deepBlack rounded-lg rounded-t-none px-6 py-4 !m-0 md:rounded-l-none md:rounded-r col-span-12 md:col-span-5 flex flex-col ${
+                    showAll ? "md:justify-end" : "md:justify-center"
+                  }`}
+                >
                   <h2 className="text-base text-snowWhite opacity-50 font-medium">
                     GRAND TOTAL
                   </h2>
