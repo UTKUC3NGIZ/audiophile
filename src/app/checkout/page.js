@@ -11,6 +11,7 @@ import {
 } from "@headlessui/react";
 import Button1 from "@/components/buttons/button1";
 import Image from "next/image";
+import Link from "next/link";
 
 const plans = ["e-money", "Cash on Delivery "];
 
@@ -41,6 +42,7 @@ function Page() {
   const submit = (e) => {
     e.preventDefault();
     setSuccess(true);
+    localStorage.removeItem("basket");
   };
 
   return (
@@ -450,7 +452,9 @@ function Page() {
               </div>
               <div className="flex gap-4 ">
                 <div onClick={() => setSuccess(false)} className="w-full">
-                  <Button1 content={"BACK TO HOME"} color={"orange"} />
+                  <Link href={"/"}>
+                    <Button1 content={"BACK TO HOME"} color={"orange"} />
+                  </Link>
                 </div>
               </div>
             </DialogPanel>
