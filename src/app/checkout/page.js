@@ -17,7 +17,7 @@ const plans = ["e-money", "Cash on Delivery "];
 
 function Page() {
   let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(true);
+  let [success, setSuccess] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   const [basket, setBasket] = useState([]);

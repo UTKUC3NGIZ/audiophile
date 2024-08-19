@@ -24,7 +24,7 @@ function content() {
             Bringing you the <span className="text-sunsetOrange">best</span>{" "}
             audio gear
           </h2>
-          <p className="text-deepBlack text-opacity-50 text-base text-center font-normal lg:text-start">
+          <p className="text-deepBlack text-opacity-50 text-base text-center font-normal lg:text-start md:w-4/5 md:m-auto lg:w-10/12 lg:m-0">
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio
             accessories. We have a large showroom and luxury demonstration rooms

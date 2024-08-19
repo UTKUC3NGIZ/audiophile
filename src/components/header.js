@@ -63,7 +63,7 @@ function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-bold text-pureWhite uppercase"
+              className="text-[13px] font-bold text-pureWhite uppercase"
             >
               {item.name}
             </Link>
