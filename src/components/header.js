@@ -22,7 +22,6 @@ function Header() {
     { name: "SPEAKERS", href: "/category/speakers" },
     { name: "EARPHONES", href: "/category/earphones" },
   ];
-
   return (
     <div
       className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full z-50 ${
@@ -75,12 +74,19 @@ function Header() {
         onClick={() => setBasketIsOpen(true)}
         className="md:ml-auto lg:ml-0"
       >
-        <Image
-          src="/assets/shared/desktop/icon-cart.svg"
-          alt="Cart Icon"
-          width={23}
-          height={20}
-        />
+        <div className="relative">
+          <Image
+            src="/assets/shared/desktop/icon-cart.svg"
+            alt="Cart Icon"
+            width={23}
+            height={20}
+          />
+          <span className="-top-2 left-4 absolute  w-5 h-5 bg-white border-2 border-white text-deepBlack flex justify-center items-center font-bold text-sm rounded-full">
+            {localStorage.getItem("basket")
+              ? JSON.parse(localStorage.getItem("basket")).length
+              : 0}
+          </span>
+        </div>
       </button>
       <span className="w-[90%] h-[1px] bg-cloudGray opacity-50 absolute translate-y-1/2 translate-x-1/2 bottom-0 right-1/2"></span>
       {/* Hamburger Menu */}
