@@ -88,7 +88,7 @@ function Header() {
           </span>
         </div>
       </button>
-      <span className="w-[90%] h-[1px] bg-cloudGray opacity-50 absolute translate-y-1/2 translate-x-1/2 bottom-0 right-1/2"></span>
+      <span className="w-[90%] lg:w-[78%] h-[1px] bg-cloudGray opacity-50 absolute translate-y-1/2 translate-x-1/2 bottom-0 right-1/2"></span>
       {/* Hamburger Menu */}
       <HamburgerMenu
         hamburgerIsOpen={hamburgerIsOpen}
