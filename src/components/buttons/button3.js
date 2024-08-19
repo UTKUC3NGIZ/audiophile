@@ -6,7 +6,7 @@ function button3({ url }) {
   return (
     <Link
       href={`/category/${url}`}
-      className="py-4 px-8 bg-transparent text-deepBlack text-opacity-50 font-bold text-sm uppercase font-sans hover:text-sunsetOrange hover:text-opacity-100 "
+      className="py-4 px-8 bg-transparent text-deepBlack text-opacity-50 font-bold text-sm uppercase font-sans group-hover/item:text-sunsetOrange group-hover/item:text-opacity-100 "
     >
       Shop
       <span className="inline-block ml-2">
