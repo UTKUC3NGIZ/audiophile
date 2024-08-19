@@ -82,7 +82,7 @@ function Page() {
                         type="text"
                         autoComplete="name"
                         placeholder="Alexei Ward"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -101,7 +101,7 @@ function Page() {
                         type="email"
                         autoComplete="email"
                         placeholder="alexei@mail.com"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -120,7 +120,7 @@ function Page() {
                         type="tel"
                         autoComplete="tel"
                         placeholder="+1 202-555-0136"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -147,7 +147,7 @@ function Page() {
                       type="text"
                       autoComplete="address-level1"
                       placeholder="1137 Williams Avenue"
-                      className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                      className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                       required
                     />
                   </div>
@@ -167,7 +167,7 @@ function Page() {
                         type="number"
                         autoComplete="postal-code"
                         placeholder="10001"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -186,7 +186,7 @@ function Page() {
                         type="text"
                         autoComplete="address-level2"
                         placeholder="New York"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -205,7 +205,7 @@ function Page() {
                         type="text"
                         autoComplete="country"
                         placeholder="United States"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                         required
                       />
                     </div>
@@ -259,7 +259,7 @@ function Page() {
                           type="number"
                           autoComplete="cc-number"
                           placeholder="238521993"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                           required
                         />
                       </div>
@@ -278,7 +278,7 @@ function Page() {
                           type="number"
                           autoComplete="cc-csc"
                           placeholder="6891"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm "
+                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
                           required
                         />
                       </div>
