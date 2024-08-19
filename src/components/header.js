@@ -25,8 +25,8 @@ function Header() {
   return (
     <div
       className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full lg:grid lg:grid-cols-12 z-50 ${
-        isHomePage ? colorVariants.transparent : colorVariants.black
-      }`}
+        basketIsOpen ? "lg:pr-44" : ""
+      } ${isHomePage ? colorVariants.transparent : colorVariants.black}`}
     >
       {/* Header Menu */}
       <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0 lg:col-span-2">
