@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Button1 from "@/components/buttons/button1";
+import Link from "next/link";
 
 export default function ClientComponent({ product }) {
   const [deviceType, setDeviceType] = useState("mobile");
@@ -199,7 +200,9 @@ export default function ClientComponent({ product }) {
                 </h1>
 
                 <div className="w-fit ">
-                  <Button1 color={"orange"} content={"See Product"} />
+                  <Link href={`/product-detail/${item.slug}`}>
+                    <Button1 color={"orange"} content={"See Product"} />
+                  </Link>
                 </div>
               </div>
             </div>
