@@ -24,12 +24,12 @@ function Header() {
   ];
   return (
     <div
-      className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full z-50 ${
+      className={`flex justify-between items-center py-8 px-6 md:px-10 lg:px-40 absolute top-0 w-full lg:grid lg:grid-cols-12 z-50 ${
         isHomePage ? colorVariants.transparent : colorVariants.black
       }`}
     >
       {/* Header Menu */}
-      <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0">
+      <div className="flex items-center space-x-6 md:space-x-8 lg:space-x-0 lg:col-span-2">
         <button onClick={() => setHamburgerIsOpen(true)} className="lg:hidden">
           <Image
             src="/assets/shared/tablet/icon-hamburger.svg"
@@ -48,7 +48,7 @@ function Header() {
           />
         </Link>
       </div>
-      <div>
+      <div className="lg:col-span-8 lg:flex lg:justify-center">
         <Link href={"/"}>
           <Image
             src="/assets/shared/desktop/logo.svg"
@@ -72,7 +72,7 @@ function Header() {
       </div>
       <button
         onClick={() => setBasketIsOpen(true)}
-        className="md:ml-auto lg:ml-0"
+        className="md:ml-auto lg:ml-0 lg:col-span-2 lg:flex lg:justify-end"
       >
         <div className="relative">
           <Image
