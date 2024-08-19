@@ -82,7 +82,7 @@ function Header() {
             height={20}
           />
           <span className="-top-2 left-4 absolute  w-5 h-5 bg-white border-2 border-white text-deepBlack flex justify-center items-center font-bold text-sm rounded-full">
-            {localStorage?.getItem("basket")
+            {typeof window !== "undefined" && localStorage?.getItem("basket")
               ? JSON.parse(localStorage.getItem("basket")).length
               : 0}
           </span>
