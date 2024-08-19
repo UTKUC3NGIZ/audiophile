@@ -16,10 +16,10 @@ import Link from "next/link";
 const plans = ["e-money", "Cash on Delivery "];
 
 function Page() {
-  let [selected, setSelected] = useState(plans[0]);
-  let [success, setSuccess] = useState(false);
+  const [selected, setSelected] = useState(plans[0]);
+  const [success, setSuccess] = useState(false);
   const [showAll, setShowAll] = useState(false);
-
+  const [errors, setErrors] = useState({});
   const [basket, setBasket] = useState([]);
   useEffect(() => {
     const fetchBasket = async () => {
@@ -39,12 +39,49 @@ function Page() {
     0
   );
 
-  const submit = (e) => {
-    e.preventDefault();
-    setSuccess(true);
-    localStorage.removeItem("basket");
+  const validate = (data) => {
+    const newErrors = {};
+
+    if (!data.name) newErrors.name = "Name is required";
+    if (!data.email) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(data.email))
+      newErrors.email = "Email is invalid";
+    if (!data.phone) newErrors.phone = "Phone number is required";
+    if (!data.address) newErrors.address = "Address is required";
+    if (!data.zip) newErrors.zip = "ZIP Code is required";
+    if (!data.city) newErrors.city = "City is required";
+    if (!data.country) newErrors.country = "Country is required";
+    if (selected === "e-money") {
+      if (!data.moneyNumber)
+        newErrors.moneyNumber = "e-Money number is required";
+      if (!data.moneyPin) newErrors.moneyPin = "e-Money PIN is required";
+    }
+
+    return newErrors;
   };
 
+  const submit = (e) => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      address: e.target.address.value,
+      zip: e.target.zip.value,
+      city: e.target.city.value,
+      country: e.target.country.value,
+      moneyNumber: e.target.moneyNumber?.value,
+      moneyPin: e.target.moneyPin?.value,
+    };
+
+    const newErrors = validate(formData);
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setSuccess(true);
+      localStorage.removeItem("basket");
+    }
+  };
   return (
     <div className="bg-cloudGray">
       <div className="pt-[88px] max-w-[1440px] m-auto px-6 md:px-10 lg:px-40  pb-24">
@@ -69,12 +106,21 @@ function Page() {
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Name
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="name"
+                        className={`block text-sm font-medium  ${
+                          errors.name ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        Name
+                      </label>
+                      {errors.name && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.name}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="name"
@@ -82,18 +128,28 @@ function Page() {
                         type="text"
                         autoComplete="name"
                         placeholder="Alexei Ward"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.name ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Email Address
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="email"
+                        className={`block text-sm font-medium  ${
+                          errors.email ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        Email Address
+                      </label>
+                      {errors.email && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="email"
@@ -101,18 +157,28 @@ function Page() {
                         type="email"
                         autoComplete="email"
                         placeholder="alexei@mail.com"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.email ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Phone Number
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="phone"
+                        className={`block text-sm font-medium  ${
+                          errors.phone ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        Phone Number
+                      </label>
+                      {errors.phone && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="phone"
@@ -120,8 +186,9 @@ function Page() {
                         type="tel"
                         autoComplete="tel"
                         placeholder="+1 202-555-0136"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.phone ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
@@ -134,12 +201,21 @@ function Page() {
               </h2>
               <div className="flex flex-col gap-6">
                 <div className="sm:col-span-3">
-                  <label
-                    htmlFor="address"
-                    className="block text-sm font-medium text-deepBlack"
-                  >
-                    Your Address
-                  </label>
+                  <div className="flex flex-row justify-between">
+                    <label
+                      htmlFor="address"
+                      className={`block text-sm font-medium  ${
+                        errors.address ? "text-red-500" : "text-deepBlack"
+                      }`}
+                    >
+                      Your Address
+                    </label>
+                    {errors.address && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.address}
+                      </p>
+                    )}
+                  </div>
                   <div className="mt-2">
                     <input
                       id="address"
@@ -147,19 +223,29 @@ function Page() {
                       type="text"
                       autoComplete="address-level1"
                       placeholder="1137 Williams Avenue"
-                      className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                      required
+                      className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                        errors.address ? "border-red-500" : "border-[#CFCFCF]"
+                      } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="zip"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      ZIP Code
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="zip"
+                        className={`block text-sm font-medium  ${
+                          errors.zip ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        ZIP Code
+                      </label>
+                      {errors.zip && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.zip}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="zip"
@@ -167,18 +253,28 @@ function Page() {
                         type="number"
                         autoComplete="postal-code"
                         placeholder="10001"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.zip ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="city"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      City
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="city"
+                        className={`block text-sm font-medium  ${
+                          errors.city ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        City
+                      </label>
+                      {errors.city && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.city}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="city"
@@ -186,18 +282,28 @@ function Page() {
                         type="text"
                         autoComplete="address-level2"
                         placeholder="New York"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.city ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
                   <div className="sm:col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="country"
-                      className="block text-sm font-medium text-deepBlack"
-                    >
-                      Country
-                    </label>
+                    <div className="flex flex-row justify-between">
+                      <label
+                        htmlFor="country"
+                        className={`block text-sm font-medium  ${
+                          errors.country ? "text-red-500" : "text-deepBlack"
+                        }`}
+                      >
+                        Country
+                      </label>
+                      {errors.country && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.country}
+                        </p>
+                      )}
+                    </div>
                     <div className="mt-2">
                       <input
                         id="country"
@@ -205,8 +311,9 @@ function Page() {
                         type="text"
                         autoComplete="country"
                         placeholder="United States"
-                        className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                        required
+                        className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                          errors.country ? "border-red-500" : "border-[#CFCFCF]"
+                        } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                       />
                     </div>
                   </div>
@@ -246,12 +353,23 @@ function Page() {
                 {selected === "e-money" ? (
                   <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
                     <div className="sm:col-span-3 md:col-span-1">
-                      <label
-                        htmlFor="moneyNumber"
-                        className="block text-sm font-medium text-deepBlack"
-                      >
-                        e-Money Number
-                      </label>
+                      <div className="flex flex-row justify-between">
+                        <label
+                          htmlFor="moneyNumber"
+                          className={`block text-sm font-medium  ${
+                            errors.moneyNumber
+                              ? "text-red-500"
+                              : "text-deepBlack"
+                          }`}
+                        >
+                          e-Money Number
+                        </label>
+                        {errors.moneyNumber && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.moneyNumber}
+                          </p>
+                        )}
+                      </div>
                       <div className="mt-2">
                         <input
                           id="moneyNumber"
@@ -259,18 +377,30 @@ function Page() {
                           type="number"
                           autoComplete="cc-number"
                           placeholder="238521993"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                          required
+                          className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                            errors.moneyNumber
+                              ? "border-red-500"
+                              : "border-[#CFCFCF]"
+                          } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                         />
                       </div>
                     </div>
                     <div className="sm:col-span-3 md:col-span-1">
-                      <label
-                        htmlFor="moneyPin"
-                        className="block text-sm font-medium text-deepBlack"
-                      >
-                        e-Money PIN
-                      </label>
+                      <div className="flex flex-row justify-between">
+                        <label
+                          htmlFor="moneyPin"
+                          className={`block text-sm font-medium  ${
+                            errors.moneyPin ? "text-red-500" : "text-deepBlack"
+                          }`}
+                        >
+                          e-Money PIN
+                        </label>
+                        {errors.moneyPin && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.moneyPin}
+                          </p>
+                        )}
+                      </div>
                       <div className="mt-2">
                         <input
                           id="moneyPin"
@@ -278,8 +408,11 @@ function Page() {
                           type="number"
                           autoComplete="cc-csc"
                           placeholder="6891"
-                          className="block w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm focus-visible:border-sunsetOrange"
-                          required
+                          className={`block w-full rounded-lg py-5 px-6 text-deepBlack border ${
+                            errors.moneyPin
+                              ? "border-red-500"
+                              : "border-[#CFCFCF]"
+                          } outline-none sm:text-sm focus-visible:border-sunsetOrange`}
                         />
                       </div>
                     </div>
