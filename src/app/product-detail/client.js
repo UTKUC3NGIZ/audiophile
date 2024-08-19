@@ -68,18 +68,18 @@ export default function ClientComponent({ product }) {
               ${product.price}
             </span>
             <div className="w-fit flex flex-row gap-4">
-              <div className="relative flex items-center   overflow-hidden">
+              <div className="relative flex items-center overflow-hidden">
                 <button
                   type="button"
                   id="decrement-button"
                   data-input-counter-decrement="quantity-input"
-                  className="p-3 h-11 bg-cloudGray"
+                  className="p-3 h-11 bg-cloudGray hover:text-sunsetOrange group/item"
                   onClick={() =>
                     setCount((prevCount) => Math.max(prevCount - 1, 1))
                   }
                 >
                   <svg
-                    className="w-2 h-2 text-deepBlack opacity-25"
+                    className="w-2 h-2 text-deepBlack opacity-25 group-hover/item:text-sunsetOrange group-hover/item:opacity-100"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -107,11 +107,11 @@ export default function ClientComponent({ product }) {
                   type="button"
                   id="increment-button"
                   data-input-counter-increment="quantity-input"
-                  className=" p-3 h-11 bg-cloudGray"
+                  className=" p-3 h-11 bg-cloudGray group/item"
                   onClick={() => setCount(count + 1)}
                 >
                   <svg
-                    className="w-2 h-2 text-deepBlack opacity-25"
+                    className="w-2 h-2 text-deepBlack opacity-25 group-hover/item:text-sunsetOrange group-hover/item:opacity-100 "
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

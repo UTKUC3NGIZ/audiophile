@@ -105,11 +105,11 @@ function Basket({ basketIsOpen, setBasketIsOpen }) {
                             type="button"
                             id="decrement-button"
                             data-input-counter-decrement="quantity-input"
-                            className="p-3 h-11 bg-cloudGray"
+                            className="p-3 h-11 bg-cloudGray hover:text-sunsetOrange group/item"
                             onClick={() => decrementQuantity(index)}
                           >
                             <svg
-                              className="w-2 h-2 text-deepBlack opacity-25"
+                              className="w-2 h-2 text-deepBlack opacity-25 group-hover/item:text-sunsetOrange group-hover/item:opacity-100"
                               aria-hidden="true"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
@@ -138,11 +138,11 @@ function Basket({ basketIsOpen, setBasketIsOpen }) {
                             type="button"
                             id="increment-button"
                             data-input-counter-increment="quantity-input"
-                            className=" p-3 h-11 bg-cloudGray"
+                            className="p-3 h-11 bg-cloudGray hover:text-sunsetOrange group/item"
                             onClick={() => incrementQuantity(index)}
                           >
                             <svg
-                              className="w-2 h-2 text-deepBlack opacity-25"
+                              className="w-2 h-2 text-deepBlack opacity-25 group-hover/item:text-sunsetOrange group-hover/item:opacity-100"
                               aria-hidden="true"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"

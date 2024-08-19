@@ -20,18 +20,29 @@ function footer() {
         <div>
           <ul className="text-sm font-bold uppercase flex justify-center flex-col md:flex-row gap-4 text-center tracking-widest">
             <li>
-              <Link href={"/"}>Home</Link>
+              <Link href={"/"} className="hover:text-sunsetOrange">
+                Home
+              </Link>
             </li>
             <li>
-              <Link href={"/category/headphones"} className="uppercase">
+              <Link
+                href={"/category/headphones"}
+                className="uppercase hover:text-sunsetOrange"
+              >
                 HEADPHONES
               </Link>
             </li>
-            <Link href={"/category/speakers"} className="uppercase">
+            <Link
+              href={"/category/speakers"}
+              className="uppercase hover:text-sunsetOrange"
+            >
               speakers
             </Link>
 
-            <Link href={"/category/earphones"} className="uppercase">
+            <Link
+              href={"/category/earphones"}
+              className="uppercase hover:text-sunsetOrange"
+            >
               earphones
             </Link>
           </ul>
