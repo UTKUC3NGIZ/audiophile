@@ -50,7 +50,7 @@ function Page() {
       <div className="pt-[88px] max-w-[1440px] m-auto px-6 md:px-10 lg:px-40  pb-24">
         <div className=" flex justify-start pt-4 pb-6">
           <button
-            className="text-base text-deepBlack text-opacity-50 font-medium"
+            className="text-base text-deepBlack text-opacity-50 font-medium hover:text-sunsetOrange"
             onClick={() => window.history.back()}
           >
             Go Back
@@ -227,11 +227,15 @@ function Page() {
                   {plans.map((plan) => (
                     <Field
                       key={plan}
-                      className="flex flex-row gap-4 items-center w-full rounded-lg  py-5 px-6 text-deepBlack border-[#CFCFCF] border outline-none sm:text-sm md:w-1/2"
+                      className={`flex flex-row gap-4 items-center w-full rounded-lg py-5 px-6 text-deepBlack ${
+                        selected === plan
+                          ? "border-sunsetOrange"
+                          : "border-[#CFCFCF]"
+                      } border outline-none sm:text-sm md:w-1/2 hover:border-sunsetOrange`}
                     >
                       <Radio
                         value={plan}
-                        className="group flex size-5 items-center justify-center rounded-full border bg-white data-[checked]:bg-sunsetOrange "
+                        className="group flex size-5 items-center justify-center rounded-full border bg-white data-[checked]:bg-sunsetOrange"
                       >
                         <span className="invisible size-2 rounded-full bg-white group-data-[checked]:visible" />
                       </Radio>
