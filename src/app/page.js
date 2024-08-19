@@ -96,21 +96,21 @@ export default function Home() {
         </div>
       </div>
       {/* See Product 2 */}
-      <div className="rounded-lg mt-6 overflow-hidden relative  px-6 md:px-10 lg:px-40">
+      <div className="rounded-lg mt-6 overflow-hidden relative px-6 md:px-10 lg:px-40">
         <img
           src="/assets/home/mobile/image-speaker-zx7.jpg"
           alt=""
-          className="w-full h-auto md:hidden"
+          className="w-full h-auto md:hidden rounded-lg"
         />
         <img
           src="/assets/home/tablet/image-speaker-zx7.jpg"
           alt=""
-          className="w-full h-auto hidden md:block lg:hidden"
+          className="w-full h-auto hidden md:block lg:hidden rounded-lg"
         />
         <img
           src="/assets/home/desktop/image-speaker-zx7.jpg"
           alt=""
-          className="w-full h-auto hidden lg:block"
+          className="w-full h-auto hidden lg:block rounded-lg"
         />
         <div
           className="flex flex-col absolute top-1/2 ml-6 md:ml-16 transform  -translate-y-1/2
