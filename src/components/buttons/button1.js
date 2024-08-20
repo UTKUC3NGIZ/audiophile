@@ -11,7 +11,7 @@ function button1({ content, color }) {
   };
   return (
     <button
-      className={`py-3 px-8 border font-bold text-sm uppercase font-sans  w-full ${colorVariants[color]}`}
+      className={` py-3 px-8 border font-bold text-sm uppercase font-sans  w-full ${colorVariants[color]}`}
     >
       {content}
     </button>

@@ -73,7 +73,7 @@ export default function ClientComponent({ product }) {
                   type="button"
                   id="decrement-button"
                   data-input-counter-decrement="quantity-input"
-                  className="p-3 h-11 bg-cloudGray hover:text-sunsetOrange group/item"
+                  className="p-3 bg-cloudGray hover:text-sunsetOrange group/item h-full"
                   onClick={() =>
                     setCount((prevCount) => Math.max(prevCount - 1, 1))
                   }
@@ -99,7 +99,7 @@ export default function ClientComponent({ product }) {
                   id="quantity-input"
                   data-input-counter
                   aria-describedby="helper-text-explanation"
-                  className=" h-11 text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack"
+                  className=" text-center block w-full py-2.5 bg-cloudGray text-deepBlack placeholder-deepBlack h-full"
                   placeholder={count}
                   required
                 />
@@ -107,7 +107,7 @@ export default function ClientComponent({ product }) {
                   type="button"
                   id="increment-button"
                   data-input-counter-increment="quantity-input"
-                  className=" p-3 h-11 bg-cloudGray group/item"
+                  className=" p-3 bg-cloudGray group/item h-full"
                   onClick={() => setCount(count + 1)}
                 >
                   <svg
@@ -194,7 +194,7 @@ export default function ClientComponent({ product }) {
                 className=" w-auto h-auto object-cover rounded-lg"
               />
 
-              <div className="flex flex-col gap-6 lg:justify-center md:items-start items-center lg:items-center">
+              <div className="flex flex-col gap-6 lg:justify-center items-center lg:items-center">
                 <h1 className="md:text-2xl text-2xl text-deepBlack font-bold lg:text-left text-center">
                   {item.name}
                 </h1>
