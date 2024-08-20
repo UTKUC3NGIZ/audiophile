@@ -57,7 +57,7 @@ function footer() {
             and visit our demo facility - we&apos;re open 7 days a week.
           </p>
           <div className="lg:flex flex-row gap-4 justify-center items-center hidden">
-            <Link href="https://www.facebook.com/">
+            <Link href="https://www.facebook.com/" target="_blank">
               <Image
                 src="/assets/shared/desktop/icon-facebook.svg"
                 alt="Logo"
@@ -65,7 +65,7 @@ function footer() {
                 height={24}
               />
             </Link>
-            <Link href="https://www.facebook.com/">
+            <Link href="https://www.facebook.com/" target="_blank">
               <Image
                 src="/assets/shared/desktop/icon-twitter.svg"
                 alt="Logo"
@@ -73,7 +73,7 @@ function footer() {
                 height={24}
               />
             </Link>
-            <Link href="https://www.facebook.com/">
+            <Link href="https://www.facebook.com/" target="_blank">
               <Image
                 src="/assets/shared/desktop/icon-instagram.svg"
                 alt="Logo"
